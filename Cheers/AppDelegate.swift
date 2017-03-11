@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let navigationBarAppearace = UINavigationBar.appearance()
         navigationBarAppearace.tintColor = UIColor.white
-        navigationBarAppearace.barTintColor = UIColor(hex: "b3ed89")
-        
+        //navigationBarAppearace.barTintColor = UIColor(hex: "b3ed89")
+        navigationBarAppearace.barTintColor = UIColor.black
         
         // Swipe screen setup
         

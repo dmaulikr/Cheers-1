@@ -20,6 +20,21 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
     
     @IBOutlet weak var chatButton: UIButton!
     
+    
+    
+    // if you do this u can no longer swipe back
+    @IBAction func showFluidVC(_ sender: UIBarButtonItem) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainVC = storyboard.instantiateViewController(withIdentifier: "left") as! UINavigationController
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        UIView.transition(with: appDelegate.window!, duration: 0.5, options: .transitionFlipFromLeft, animations: { () -> Void in
+            appDelegate.window!.rootViewController = mainVC
+        }, completion:nil)
+        
+    }
+    
+    
     // MARK: - View Controller Lifecycle
     
     override func viewDidLoad() {
