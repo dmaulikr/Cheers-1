@@ -7,23 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9DC225301E734E9E0001DDFA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC2252F1E734E9E0001DDFA /* Extensions.swift */; };
+		9DC225321E7354AC0001DDFA /* Bitmoji.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DC225311E7354AC0001DDFA /* Bitmoji.xcassets */; };
+		9DC225371E7377CE0001DDFA /* GradientMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC225361E7377CE0001DDFA /* GradientMaskView.swift */; };
 		9DD0DCAF1E7270BE005D2F74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0DCAE1E7270BE005D2F74 /* AppDelegate.swift */; };
 		9DD0DCB11E7270BE005D2F74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0DCB01E7270BE005D2F74 /* ViewController.swift */; };
 		9DD0DCB41E7270BE005D2F74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0DCB21E7270BE005D2F74 /* Main.storyboard */; };
 		9DD0DCB71E7270BE005D2F74 /* Cheers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0DCB51E7270BE005D2F74 /* Cheers.xcdatamodeld */; };
-		9DD0DCB91E7270BE005D2F74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0DCB81E7270BE005D2F74 /* Assets.xcassets */; };
+		9DD0DCB91E7270BE005D2F74 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0DCB81E7270BE005D2F74 /* Icons.xcassets */; };
 		9DD0DCBC1E7270BE005D2F74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0DCBA1E7270BE005D2F74 /* LaunchScreen.storyboard */; };
+		9DD0DCC51E727812005D2F74 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0DCC41E727812005D2F74 /* FriendsViewController.swift */; };
+		9DD0DCC81E727831005D2F74 /* SnapContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0DCC61E727831005D2F74 /* SnapContainerViewController.swift */; };
+		9DD0DCC91E727831005D2F74 /* VerticalScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0DCC71E727831005D2F74 /* VerticalScrollViewController.swift */; };
+		9DD0DCCC1E727E68005D2F74 /* DrinkingBuddy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0DCCB1E727E68005D2F74 /* DrinkingBuddy.swift */; };
+		9DD0DCCE1E729734005D2F74 /* FriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0DCCD1E729734005D2F74 /* FriendCollectionViewCell.swift */; };
+		9DD0DCD01E729742005D2F74 /* DrunkFriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0DCCF1E729742005D2F74 /* DrunkFriendCollectionViewCell.swift */; };
+		9DD0DCD21E72A016005D2F74 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0DCD11E72A016005D2F74 /* LocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9DC2252F1E734E9E0001DDFA /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		9DC225311E7354AC0001DDFA /* Bitmoji.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Bitmoji.xcassets; sourceTree = "<group>"; };
+		9DC225361E7377CE0001DDFA /* GradientMaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientMaskView.swift; sourceTree = "<group>"; };
 		9DD0DCAB1E7270BE005D2F74 /* Cheers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD0DCAE1E7270BE005D2F74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DD0DCB01E7270BE005D2F74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9DD0DCB31E7270BE005D2F74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9DD0DCB61E7270BE005D2F74 /* Cheers.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cheers.xcdatamodel; sourceTree = "<group>"; };
-		9DD0DCB81E7270BE005D2F74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9DD0DCB81E7270BE005D2F74 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		9DD0DCBB1E7270BE005D2F74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DD0DCBD1E7270BE005D2F74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DD0DCC41E727812005D2F74 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		9DD0DCC61E727831005D2F74 /* SnapContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapContainerViewController.swift; sourceTree = "<group>"; };
+		9DD0DCC71E727831005D2F74 /* VerticalScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalScrollViewController.swift; sourceTree = "<group>"; };
+		9DD0DCCB1E727E68005D2F74 /* DrinkingBuddy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkingBuddy.swift; sourceTree = "<group>"; };
+		9DD0DCCD1E729734005D2F74 /* FriendCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCollectionViewCell.swift; sourceTree = "<group>"; };
+		9DD0DCCF1E729742005D2F74 /* DrunkFriendCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrunkFriendCollectionViewCell.swift; sourceTree = "<group>"; };
+		9DD0DCD11E72A016005D2F74 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +57,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9DC2252C1E732CBE0001DDFA /* Friend Collection */ = {
+			isa = PBXGroup;
+			children = (
+				9DD0DCCD1E729734005D2F74 /* FriendCollectionViewCell.swift */,
+				9DD0DCCF1E729742005D2F74 /* DrunkFriendCollectionViewCell.swift */,
+				9DD0DCC41E727812005D2F74 /* FriendsViewController.swift */,
+				9DC225361E7377CE0001DDFA /* GradientMaskView.swift */,
+			);
+			name = "Friend Collection";
+			sourceTree = "<group>";
+		};
+		9DC225331E73569C0001DDFA /* Location View */ = {
+			isa = PBXGroup;
+			children = (
+				9DD0DCD11E72A016005D2F74 /* LocationViewController.swift */,
+			);
+			name = "Location View";
+			sourceTree = "<group>";
+		};
+		9DC225341E7356B80001DDFA /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				9DD0DCB81E7270BE005D2F74 /* Icons.xcassets */,
+				9DC225311E7354AC0001DDFA /* Bitmoji.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		9DC225351E7356C50001DDFA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9DC2252F1E734E9E0001DDFA /* Extensions.swift */,
+				9DD0DCBA1E7270BE005D2F74 /* LaunchScreen.storyboard */,
+				9DD0DCBD1E7270BE005D2F74 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		9DD0DCA21E7270BE005D2F74 = {
 			isa = PBXGroup;
 			children = (
@@ -57,14 +115,34 @@
 			isa = PBXGroup;
 			children = (
 				9DD0DCAE1E7270BE005D2F74 /* AppDelegate.swift */,
+				9DC225351E7356C50001DDFA /* Supporting Files */,
+				9DD0DCCA1E72784D005D2F74 /* Swipe Screens */,
 				9DD0DCB01E7270BE005D2F74 /* ViewController.swift */,
 				9DD0DCB21E7270BE005D2F74 /* Main.storyboard */,
-				9DD0DCB81E7270BE005D2F74 /* Assets.xcassets */,
-				9DD0DCBA1E7270BE005D2F74 /* LaunchScreen.storyboard */,
-				9DD0DCBD1E7270BE005D2F74 /* Info.plist */,
-				9DD0DCB51E7270BE005D2F74 /* Cheers.xcdatamodeld */,
+				9DC225331E73569C0001DDFA /* Location View */,
+				9DC2252C1E732CBE0001DDFA /* Friend Collection */,
+				9DD0DCCB1E727E68005D2F74 /* DrinkingBuddy.swift */,
+				9DC225341E7356B80001DDFA /* Assets */,
+				9DD0DCC31E7270D5005D2F74 /* Core Data */,
 			);
 			path = Cheers;
+			sourceTree = "<group>";
+		};
+		9DD0DCC31E7270D5005D2F74 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				9DD0DCB51E7270BE005D2F74 /* Cheers.xcdatamodeld */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		9DD0DCCA1E72784D005D2F74 /* Swipe Screens */ = {
+			isa = PBXGroup;
+			children = (
+				9DD0DCC61E727831005D2F74 /* SnapContainerViewController.swift */,
+				9DD0DCC71E727831005D2F74 /* VerticalScrollViewController.swift */,
+			);
+			name = "Swipe Screens";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,7 +206,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DD0DCBC1E7270BE005D2F74 /* LaunchScreen.storyboard in Resources */,
-				9DD0DCB91E7270BE005D2F74 /* Assets.xcassets in Resources */,
+				9DD0DCB91E7270BE005D2F74 /* Icons.xcassets in Resources */,
+				9DC225321E7354AC0001DDFA /* Bitmoji.xcassets in Resources */,
 				9DD0DCB41E7270BE005D2F74 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,8 +219,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DD0DCD01E729742005D2F74 /* DrunkFriendCollectionViewCell.swift in Sources */,
+				9DD0DCCE1E729734005D2F74 /* FriendCollectionViewCell.swift in Sources */,
+				9DD0DCC51E727812005D2F74 /* FriendsViewController.swift in Sources */,
+				9DD0DCC91E727831005D2F74 /* VerticalScrollViewController.swift in Sources */,
 				9DD0DCB11E7270BE005D2F74 /* ViewController.swift in Sources */,
+				9DD0DCD21E72A016005D2F74 /* LocationViewController.swift in Sources */,
+				9DD0DCC81E727831005D2F74 /* SnapContainerViewController.swift in Sources */,
+				9DD0DCCC1E727E68005D2F74 /* DrinkingBuddy.swift in Sources */,
 				9DD0DCB71E7270BE005D2F74 /* Cheers.xcdatamodeld in Sources */,
+				9DC225301E734E9E0001DDFA /* Extensions.swift in Sources */,
+				9DC225371E7377CE0001DDFA /* GradientMaskView.swift in Sources */,
 				9DD0DCAF1E7270BE005D2F74 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +392,7 @@
 				9DD0DCC21E7270BE005D2F74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

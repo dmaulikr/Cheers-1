@@ -13,10 +13,27 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let navigationBarAppearace = UINavigationBar.appearance()
+        navigationBarAppearace.tintColor = UIColor.white
+        navigationBarAppearace.barTintColor = UIColor(hex: "b3ed89")
+        
+        
+        // Swipe screen setup
+        
+        let left = storyboard.instantiateViewController(withIdentifier: "left")
+        let middle = storyboard.instantiateViewController(withIdentifier: "middle")
+        let right = storyboard.instantiateViewController(withIdentifier: "right")
+        let top = storyboard.instantiateViewController(withIdentifier: "top")
+        // let bottom
+        let snapContainer = SnapContainerViewController.containerViewWith(left, middleVC: middle, rightVC: right, topVC: top, bottomVC: nil)
+        self.window?.rootViewController = snapContainer
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 
