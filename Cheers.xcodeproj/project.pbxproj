@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9D369DF51E73DD1500E9B183 /* BAFluidView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D369DF41E73DD1500E9B183 /* BAFluidView.framework */; };
+		92DC8CD4C74F1AAC276B6D77 /* Pods_Cheers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52B2CBEAFF6980F4C4B2420 /* Pods_Cheers.framework */; };
 		9D369DF71E73E5E200E9B183 /* FluidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D369DF61E73E5E200E9B183 /* FluidViewController.swift */; };
 		9D369DFA1E74085B00E9B183 /* MyNightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D369DF91E74085B00E9B183 /* MyNightViewController.swift */; };
 		9DC225301E734E9E0001DDFA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC2252F1E734E9E0001DDFA /* Extensions.swift */; };
@@ -26,7 +26,8 @@
 		9DD0DCCE1E729734005D2F74 /* FriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0DCCD1E729734005D2F74 /* FriendCollectionViewCell.swift */; };
 		9DD0DCD01E729742005D2F74 /* DrunkFriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0DCCF1E729742005D2F74 /* DrunkFriendCollectionViewCell.swift */; };
 		9DD0DCD21E72A016005D2F74 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0DCD11E72A016005D2F74 /* LocationViewController.swift */; };
-		A059BF55D83AA99087F3152B /* Pods_Cheers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52B2CBEAFF6980F4C4B2420 /* Pods_Cheers.framework */; };
+		C1793A591E766EE800887B0C /* DCPathButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C1793A561E766EE800887B0C /* DCPathButton.m */; };
+		C1793A5A1E766EE800887B0C /* DCPathItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C1793A581E766EE800887B0C /* DCPathItemButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,11 @@
 		9DD0DCCF1E729742005D2F74 /* DrunkFriendCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrunkFriendCollectionViewCell.swift; sourceTree = "<group>"; };
 		9DD0DCD11E72A016005D2F74 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		B52B2CBEAFF6980F4C4B2420 /* Pods_Cheers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cheers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1793A551E766EE800887B0C /* DCPathButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPathButton.h; sourceTree = "<group>"; };
+		C1793A561E766EE800887B0C /* DCPathButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPathButton.m; sourceTree = "<group>"; };
+		C1793A571E766EE800887B0C /* DCPathItemButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPathItemButton.h; sourceTree = "<group>"; };
+		C1793A581E766EE800887B0C /* DCPathItemButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPathItemButton.m; sourceTree = "<group>"; };
+		C1793A5B1E76702800887B0C /* Cheers-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cheers-Bridging-Header.h"; sourceTree = "<group>"; };
 		F387298147FC624B80858322 /* Pods-Cheers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cheers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cheers/Pods-Cheers.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,8 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D369DF51E73DD1500E9B183 /* BAFluidView.framework in Frameworks */,
-				A059BF55D83AA99087F3152B /* Pods_Cheers.framework in Frameworks */,
+				92DC8CD4C74F1AAC276B6D77 /* Pods_Cheers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +86,11 @@
 		9D369DF81E73FD1800E9B183 /* Manual Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				C1793A5B1E76702800887B0C /* Cheers-Bridging-Header.h */,
+				C1793A551E766EE800887B0C /* DCPathButton.h */,
+				C1793A561E766EE800887B0C /* DCPathButton.m */,
+				C1793A571E766EE800887B0C /* DCPathItemButton.h */,
+				C1793A581E766EE800887B0C /* DCPathItemButton.m */,
 				9D369DF61E73E5E200E9B183 /* FluidViewController.swift */,
 			);
 			name = "Manual Tracker";
@@ -223,6 +233,7 @@
 					9DD0DCAA1E7270BE005D2F74 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 84Y59RJMZ3;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -315,6 +326,7 @@
 				9DD0DCD01E729742005D2F74 /* DrunkFriendCollectionViewCell.swift in Sources */,
 				9DD0DCCE1E729734005D2F74 /* FriendCollectionViewCell.swift in Sources */,
 				9DD0DCC51E727812005D2F74 /* FriendsViewController.swift in Sources */,
+				C1793A591E766EE800887B0C /* DCPathButton.m in Sources */,
 				9DD0DCC91E727831005D2F74 /* VerticalScrollViewController.swift in Sources */,
 				9DD0DCB11E7270BE005D2F74 /* ViewController.swift in Sources */,
 				9D369DF71E73E5E200E9B183 /* FluidViewController.swift in Sources */,
@@ -323,6 +335,7 @@
 				9DD0DCCC1E727E68005D2F74 /* DrinkingBuddy.swift in Sources */,
 				9DD0DCB71E7270BE005D2F74 /* Cheers.xcdatamodeld in Sources */,
 				9DC225301E734E9E0001DDFA /* Extensions.swift in Sources */,
+				C1793A5A1E766EE800887B0C /* DCPathItemButton.m in Sources */,
 				9DC225371E7377CE0001DDFA /* GradientMaskView.swift in Sources */,
 				9DD0DCAF1E7270BE005D2F74 /* AppDelegate.swift in Sources */,
 				9D369DFA1E74085B00E9B183 /* MyNightViewController.swift in Sources */,
@@ -447,6 +460,7 @@
 			baseConfigurationReference = F387298147FC624B80858322 /* Pods-Cheers.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 84Y59RJMZ3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -456,6 +470,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cs247.mxiao26.Cheers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cheers/Cheers-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -465,6 +481,7 @@
 			baseConfigurationReference = 2B0EBBE48DB9F745A7E2A9EC /* Pods-Cheers.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 84Y59RJMZ3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -474,6 +491,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cs247.mxiao26.Cheers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cheers/Cheers-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

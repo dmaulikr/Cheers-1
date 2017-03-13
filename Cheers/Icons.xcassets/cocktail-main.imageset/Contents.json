@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "cocktail.png",
+      "filename" : "cocktail-main1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "cocktail2.png",
+      "filename" : "cocktail-main2.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "cocktail3.png",
+      "filename" : "cocktail-main3.png",
       "scale" : "3x"
     }
   ],
