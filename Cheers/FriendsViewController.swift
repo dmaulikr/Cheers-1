@@ -120,7 +120,7 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
         let catherine = DrinkingBuddy(name: "Catherine", status: DrinkingBuddy.Status.fine, title: nil, subtitle: "The Patio", coordinate: coord)
         let jeremy = DrinkingBuddy(name: "Jeremy", status: DrinkingBuddy.Status.fine, title: nil, subtitle: "The Patio", coordinate: coord)
         let shubha = DrinkingBuddy(name: "Shubha", status: DrinkingBuddy.Status.left, title: nil, subtitle: "The Patio", coordinate: coord)
-        partyPeople = [emily, catherine, jeremy, shubha, jeremy, jeremy, jeremy, jeremy]
+        partyPeople = [emily, catherine, jeremy, shubha, jeremy, jeremy, jeremy]
     }
     
     // MARK: - UIScrollViewDelegate

@@ -30,7 +30,7 @@
         <!--Hi, Minna-->
         <scene sceneID="ncr-Vs-3AM">
             <objects>
-                <viewController id="jzp-7B-bmv" sceneMemberID="viewController">
+                <viewController id="jzp-7B-bmv" customClass="MyNightViewController" customModule="Cheers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Jl0-J2-zqg"/>
                         <viewControllerLayoutGuide type="bottom" id="5ye-G3-8of"/>
@@ -38,7 +38,7 @@
                     <view key="view" contentMode="scaleToFill" id="sqF-tI-5qq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.82555944901232947" green="1" blue="0.79071310666995431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Hi, Minna" id="V1i-jQ-V0S"/>
                 </viewController>
