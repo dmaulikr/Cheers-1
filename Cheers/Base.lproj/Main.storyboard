@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -69,7 +69,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FriendCell" id="3UY-Xs-rzK" customClass="FriendCollectionViewCell" customModule="Cheers" customModuleProvider="target">
-                                        <rect key="frame" x="113" y="0.0" width="150" height="150"/>
+                                        <rect key="frame" x="112.5" y="0.0" width="150" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
@@ -94,7 +94,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DrunkFriendCell" id="h49-cA-PkP" customClass="DrunkFriendCollectionViewCell" customModule="Cheers" customModuleProvider="target">
-                                        <rect key="frame" x="13" y="160" width="350" height="150"/>
+                                        <rect key="frame" x="12.5" y="160" width="350" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="150"/>
@@ -143,7 +143,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MtD-aF-Ibv">
-                        <barButtonItem key="leftBarButtonItem" image="cocktail" id="rIl-FK-78b"/>
+                        <barButtonItem key="leftBarButtonItem" image="drink" id="rIl-FK-78b"/>
                         <barButtonItem key="rightBarButtonItem" image="pin" id="9iJ-4K-80F"/>
                     </navigationItem>
                     <connections>
@@ -299,8 +299,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cocktail" width="25" height="25"/>
         <image name="dancing" width="25" height="25"/>
+        <image name="drink" width="25" height="25"/>
         <image name="emily1" width="78" height="120"/>
         <image name="emily2" width="98" height="105"/>
         <image name="pin" width="25" height="25"/>
