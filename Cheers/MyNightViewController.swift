@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class MyNightViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -16,6 +17,7 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     @IBOutlet weak var bacView: UIView!
     
+    @IBOutlet weak var currDrinkCountLabel: UILabel!
     
     fileprivate var bitmojis = [String]()
     
@@ -36,6 +38,11 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
         return pageSize
     }
+    
+    @IBAction func setBitmoji(_ sender: UIButton) {
+        HUD.flash(.label("Profile updated!"), delay: 0.5)
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +56,19 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
         self.bacView.clipsToBounds = true
         self.bacView.layer.borderWidth = 1.0
         self.bacView.layer.borderColor = UIColor.gray.cgColor
+        
+        let currDrink = UserInfo.numDrinks
+        currDrinkCountLabel.text = String(currDrink)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateDrinkCountLabel(notification:)), name: Notification.Name(rawValue: "drinkCountChange"), object: nil)
     }
+    
+    func updateDrinkCountLabel(notification: Notification) {
+        let currDrink = UserInfo.numDrinks
+        currDrinkCountLabel.text = String(currDrink)
+        print ("drink counted")
+    }
+    
     
     private func setupLayout() {
         let layout = self.collectionView.collectionViewLayout as? UPCarouselFlowLayout

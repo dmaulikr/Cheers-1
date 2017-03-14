@@ -28,6 +28,7 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
     var cupButton:DCPathButton!
     
     var drinkSelected = false
+    var numDrinks = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,7 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
         // Do any additional setup after loading the view.
         startFluidAnimation()
         configureButtons()
+        
     }
     
     @IBAction func swipeToAddDrink(_ sender: UISwipeGestureRecognizer) {
@@ -42,6 +44,10 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
             level += 0.1 //incrementing by 10% right now
             fluidView?.fill(to: level as NSNumber!)
             fluidView?.fillColor = cupButton.selectedButton.itemColor
+            numDrinks += 1
+            UserInfo.numDrinks = self.numDrinks
+            // kinda hacky but wtv
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "drinkCountChange"), object: nil)
         }
     }
     
@@ -49,6 +55,9 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
         if drinkSelected {
             level -= 0.1
             fluidView?.fill(to: level as NSNumber!)
+            numDrinks -= 1
+            UserInfo.numDrinks = self.numDrinks
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "drinkCountChange"), object: nil)
         }
         
     }
