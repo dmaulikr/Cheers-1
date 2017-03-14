@@ -26,6 +26,8 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
     var level = 0.0 //fluid level
     var alcIndex = 0
     var cupButton:DCPathButton!
+    
+    var drinkSelected = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,17 +38,23 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
     }
     
     @IBAction func swipeToAddDrink(_ sender: UISwipeGestureRecognizer) {
-        level += 0.1 //incrementing by 10% right now
-        fluidView?.fill(to: level as NSNumber!)
-        fluidView?.fillColor = cupButton.selectedButton.itemColor
+        if drinkSelected {
+            level += 0.1 //incrementing by 10% right now
+            fluidView?.fill(to: level as NSNumber!)
+            fluidView?.fillColor = cupButton.selectedButton.itemColor
+        }
     }
     
     @IBAction func swipeToMinusDrink(_ sender: UISwipeGestureRecognizer) {
-        level -= 0.1
-        fluidView?.fill(to: level as NSNumber!)
+        if drinkSelected {
+            level -= 0.1
+            fluidView?.fill(to: level as NSNumber!)
+        }
+        
     }
     
     public func pathButton(_ dcPathButton: DCPathButton!, clickItemButtonAt itemButtonIndex: UInt) {
+        drinkSelected = true
         fluidView?.fillColor = cupButton.selectedButton.itemColor
     }
     

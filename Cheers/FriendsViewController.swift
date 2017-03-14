@@ -8,30 +8,51 @@
 
 import UIKit
 import MapKit
+import Foundation
+import MessageUI
 
-class FriendsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class FriendsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, MFMessageComposeViewControllerDelegate {
     
     // model
     var partyPeople: [DrinkingBuddy] = []
     
     // MARK: - Outlets
-
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var chatButton: UIButton!
     
     
+    @IBAction func messageGroup(_ sender: UIButton) {
+        if MFMessageComposeViewController.canSendText(){
+            let msg:MFMessageComposeViewController=MFMessageComposeViewController()
+            var numbers = [String]()
+            for buddy in partyPeople {
+                numbers.append(buddy.phone)
+            }
+            msg.recipients = numbers
+            msg.body="hello"
+            msg.messageComposeDelegate = self
+            self.present(msg,animated:true,completion:nil)
+        }
+        else {
+            NSLog("your device do not support SMS....")
+        }
+    }
     
-    // if you do this u can no longer swipe back
-    @IBAction func showFluidVC(_ sender: UIBarButtonItem) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainVC = storyboard.instantiateViewController(withIdentifier: "left") as! UINavigationController
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
-        UIView.transition(with: appDelegate.window!, duration: 0.5, options: .transitionFlipFromLeft, animations: { () -> Void in
-            appDelegate.window!.rootViewController = mainVC
-        }, completion:nil)
-        
+    // MARK: - MFMessageComposeViewControllerDelegate
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        switch result {
+        case .cancelled:
+            print("Message was cancelled")
+            controller.dismiss(animated: true, completion: nil)
+        case .failed:
+            print("Message failed")
+            controller.dismiss(animated: true, completion: nil)
+        case .sent:
+            print("Message was sent")
+            controller.dismiss(animated: false, completion: nil)
+        }
     }
     
     
@@ -97,8 +118,6 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
 
     // Private
     private struct Constants {
-        //static let reuseIdentifier = "FriendCell"
-        
         static let sectionInsets = UIEdgeInsetsMake(1.0, 1.0, 1.0, 1.0)
     }
     
@@ -116,10 +135,10 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
     
     private func createFriends() {
         let coord = CLLocationCoordinate2D(latitude: 37.445158, longitude: -122.163913)
-        let emily = DrinkingBuddy(name: "Emily", status: DrinkingBuddy.Status.dangerZone, title: nil, subtitle: "The Patio", coordinate: coord)
-        let catherine = DrinkingBuddy(name: "Catherine", status: DrinkingBuddy.Status.fine, title: nil, subtitle: "The Patio", coordinate: coord)
-        let jeremy = DrinkingBuddy(name: "Jeremy", status: DrinkingBuddy.Status.fine, title: nil, subtitle: "The Patio", coordinate: coord)
-        let shubha = DrinkingBuddy(name: "Shubha", status: DrinkingBuddy.Status.left, title: nil, subtitle: "The Patio", coordinate: coord)
+        let emily = DrinkingBuddy(name: "Emily", status: DrinkingBuddy.Status.dangerZone, title: nil, subtitle: "The Patio", coordinate: coord, phone: "4085945805")
+        let catherine = DrinkingBuddy(name: "Catherine", status: DrinkingBuddy.Status.fine, title: nil, subtitle: "The Patio", coordinate: coord, phone: "4085945805")
+        let jeremy = DrinkingBuddy(name: "Jeremy", status: DrinkingBuddy.Status.fine, title: nil, subtitle: "The Patio", coordinate: coord, phone: "4085945805")
+        let shubha = DrinkingBuddy(name: "Shubha", status: DrinkingBuddy.Status.left, title: nil, subtitle: "The Patio", coordinate: coord, phone: "4085945805")
         partyPeople = [emily, catherine, jeremy, shubha, jeremy, jeremy, jeremy]
     }
     
@@ -144,12 +163,14 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DrunkFriendCell", for: indexPath) as! DrunkFriendCollectionViewCell
             cell.backgroundColor = UIColor.red
             cell.name = buddy.name
+            cell.friend = buddy
             return cell
         
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendCell", for: indexPath) as! FriendCollectionViewCell
             cell.backgroundColor = UIColor.gray
             cell.name = buddy.name
+            cell.friend = buddy
             return cell
         }
     }
@@ -220,14 +241,23 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
      }
      */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "Show Friend":
+                if let destinationvc = segue.destination as? FriendProfileViewController {
+                    if let friendCell = sender as? FriendCollectionViewCell {
+                        destinationvc.friend = friendCell.friend
+                    }
+                }
+            default: break
+            }
+        }
     }
-    */
 
 }

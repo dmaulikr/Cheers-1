@@ -17,14 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let navigationBarAppearace = UINavigationBar.appearance()
         navigationBarAppearace.tintColor = UIColor.white
         //navigationBarAppearace.barTintColor = UIColor(hex: "b3ed89")
         navigationBarAppearace.barTintColor = UIColor.black
         
         // Swipe screen setup
-        
+        /*
         let left = storyboard.instantiateViewController(withIdentifier: "left")
         let middle = storyboard.instantiateViewController(withIdentifier: "middle")
         let right = storyboard.instantiateViewController(withIdentifier: "right")
@@ -32,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // let bottom
         let snapContainer = SnapContainerViewController.containerViewWith(left, middleVC: middle, rightVC: right, topVC: top, bottomVC: nil)
         self.window?.rootViewController = snapContainer
-        self.window?.makeKeyAndVisible()
+        self.window?.makeKeyAndVisible()*/
         
         return true
     }

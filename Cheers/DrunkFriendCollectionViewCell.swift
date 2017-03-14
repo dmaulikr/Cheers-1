@@ -12,10 +12,13 @@ class DrunkFriendCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var friendName: UILabel!
     @IBOutlet weak var friendImage: UIImageView!
     
+    // MARK: - Properties
     var name: String? {
         didSet {
             friendName?.text = name
         }
     }
+    
+    var friend: DrinkingBuddy?
     
 }

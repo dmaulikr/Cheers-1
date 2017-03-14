@@ -19,4 +19,6 @@ class FriendCollectionViewCell: UICollectionViewCell {
             friendName?.text = name
         }
     }
+    
+    var friend: DrinkingBuddy?
 }

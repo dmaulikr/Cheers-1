@@ -17,14 +17,16 @@ class DrinkingBuddy: NSObject, MKAnnotation {
     
     var name: String
     var status: Status
+    var phone: String
     // maybe location? address?
     
-    init(name: String, status: Status, title: String?, subtitle: String?, coordinate: CLLocationCoordinate2D) {
+    init(name: String, status: Status, title: String?, subtitle: String?, coordinate: CLLocationCoordinate2D, phone: String) {
         self.name = name
         self.status = status
         self.title = title ?? name
         self.subtitle = subtitle
         self.coordinate = coordinate
+        self.phone = phone
     }
     
     // Person's night status
