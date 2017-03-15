@@ -71,6 +71,7 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
             
             if (numDrinks > UserInfo.drinkLimit) {
                 exceedLabel.isHidden = false
+                
             }
         }
     }
