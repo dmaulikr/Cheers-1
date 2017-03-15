@@ -24,16 +24,11 @@ class PersonalizeViewController: UIViewController {
     @IBOutlet weak var effectLabel: UILabel!
     
     
-    var drinkToBACDict = Dictionary<Int, String>()
-    var BACToColorDict = Dictionary<String, String>() //bac to hexadecimal
-    var BACToEffectDict = Dictionary<String, String>()
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        setupDicts()
+        //setupDicts()
         
         self.circularSlider.textfield.isUserInteractionEnabled = false
         self.circularSlider.centeredView.layer.borderWidth = 0.0
@@ -47,11 +42,11 @@ class PersonalizeViewController: UIViewController {
     
     func updateLabels(notification: Notification) {
         let newDrinkLimit = Int(self.circularSlider.value)
-        let bac = drinkToBACDict[newDrinkLimit]
-        let colorHex = BACToColorDict[bac!]
+        let bac = BacInfo.drinkToBACDict[newDrinkLimit]
+        let colorHex = BacInfo.BACToColorDict[bac!]
         self.bacLabel.text = bac
         self.bacLabel.textColor = UIColor(hex: colorHex!)
-        self.effectLabel.text = BACToEffectDict[bac!]
+        self.effectLabel.text = BacInfo.BACToEffectDict[bac!]
         self.effectLabel.textColor = UIColor(hex: colorHex!)
     }
     
@@ -73,50 +68,6 @@ class PersonalizeViewController: UIViewController {
         appDelegate.window?.rootViewController = snapContainer
         appDelegate.window?.makeKeyAndVisible()
         
-    }
-    
-    private func setupDicts() {
-        drinkToBACDict = [
-            0:"0.00",
-            1:"0.04",
-            2:"0.07",
-            3:"0.1",
-            4:"0.13",
-            5:"0.16",
-            6:"0.19",
-            7:"0.23",
-            8:"0.27",
-            9:"0.3",
-            10:"0.33"
-        ]
-        
-        BACToColorDict = [
-            "0.00":"9AD145",
-            "0.04":"9AD145",
-            "0.07":"E7B90B",
-            "0.1":"E7B90B",
-            "0.13":"FF871D",
-            "0.16":"FF871D",
-            "0.19":"CC0F0F",
-            "0.23":"CC0F0F",
-            "0.27":"CC0F0F",
-            "0.3":"CC0F0F",
-            "0.33":"CC0F0F"
-        ]
-        
-        BACToEffectDict = [
-            "0.00":"SOBER",
-            "0.04":"TIPSY",
-            "0.07":"BUZZED",
-            "0.1":"LEGALLY DRUNK",
-            "0.13":"SLOPPY DRUNK",
-            "0.16":"SLOPPY DRUNK",
-            "0.19":"WASTED",
-            "0.23":"WASTED",
-            "0.27":"BLACKOUT",
-            "0.3":"BLACKOUT",
-            "0.33":"UNCONSCIOUS"
-        ]
     }
     
     private func saveDrinkLimit() {

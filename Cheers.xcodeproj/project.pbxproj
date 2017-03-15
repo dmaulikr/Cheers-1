@@ -13,6 +13,7 @@
 		9D6D9AE41E778852008B106A /* PersonalizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D9AE31E778852008B106A /* PersonalizeViewController.swift */; };
 		9D6D9AE91E77B5A1008B106A /* CarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D9AE81E77B5A1008B106A /* CarouselCollectionViewCell.swift */; };
 		9D6D9AF51E77BDDC008B106A /* UPCarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D9AF31E77BDDC008B106A /* UPCarouselFlowLayout.swift */; };
+		9D9F61931E79E54900DE58E0 /* BacInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9F61921E79E54900DE58E0 /* BacInfo.swift */; };
 		9DBDD0491E77DECC0057756E /* FriendProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBDD0481E77DECC0057756E /* FriendProfileViewController.swift */; };
 		9DBDD04C1E77E7490057756E /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBDD04B1E77E7490057756E /* UserInfo.swift */; };
 		9DBDD04E1E77F1660057756E /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DBDD04D1E77F1660057756E /* PKHUD.framework */; };
@@ -79,6 +80,7 @@
 		9D6D9AEE1E77BA6F008B106A /* UPCarouselFlowLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UPCarouselFlowLayout.framework; path = "Pods/../build/Debug-iphoneos/UPCarouselFlowLayout/UPCarouselFlowLayout.framework"; sourceTree = "<group>"; };
 		9D6D9AF21E77BDDC008B106A /* UPCarouselFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCarouselFlowLayout.h; sourceTree = "<group>"; };
 		9D6D9AF31E77BDDC008B106A /* UPCarouselFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPCarouselFlowLayout.swift; sourceTree = "<group>"; };
+		9D9F61921E79E54900DE58E0 /* BacInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BacInfo.swift; sourceTree = "<group>"; };
 		9DBDD0481E77DECC0057756E /* FriendProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendProfileViewController.swift; sourceTree = "<group>"; };
 		9DBDD04B1E77E7490057756E /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		9DBDD04D1E77F1660057756E /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = "../../Library/Developer/Xcode/DerivedData/Cheers-grhqkqzfoebbttbpdbslvnsloepz/Build/Products/Debug-iphonesimulator/PKHUD/PKHUD.framework"; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 				9D369DF81E73FD1800E9B183 /* Manual Tracker */,
 				9DC2252C1E732CBE0001DDFA /* Friend Collection */,
 				9DD0DCCB1E727E68005D2F74 /* DrinkingBuddy.swift */,
+				9D9F61921E79E54900DE58E0 /* BacInfo.swift */,
 				9DBDD04B1E77E7490057756E /* UserInfo.swift */,
 				9DC225341E7356B80001DDFA /* Assets */,
 				9DD0DCC31E7270D5005D2F74 /* Core Data */,
@@ -556,6 +559,7 @@
 				9DBDD04C1E77E7490057756E /* UserInfo.swift in Sources */,
 				9D369DFA1E74085B00E9B183 /* MyNightViewController.swift in Sources */,
 				9DDE35B41E794584009BA3E6 /* InteractiveTransition.swift in Sources */,
+				9D9F61931E79E54900DE58E0 /* BacInfo.swift in Sources */,
 				9DDE35BB1E794584009BA3E6 /* PopupDialogDefaultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
