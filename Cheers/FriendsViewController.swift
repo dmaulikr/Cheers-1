@@ -22,6 +22,9 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
     @IBOutlet weak var chatButton: UIButton!
     
     
+    @IBOutlet weak var bounceButton: UIButton!
+    
+    
     @IBAction func messageGroup(_ sender: UIButton) {
         if MFMessageComposeViewController.canSendText(){
             let msg:MFMessageComposeViewController=MFMessageComposeViewController()
@@ -38,6 +41,22 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
             NSLog("your device do not support SMS....")
         }
     }
+    
+    @IBAction func bounce(_ sender: UIButton) {
+        let title = "Going home now?"
+        let message = "We'll notify your group"
+        // image size is fucked up
+        //let image = UIImage(named: "emily2")
+        let popup = PopupDialog(title: title, message: message, image: nil)
+        
+        let button = DefaultButton(title: "bounce") {
+            print("button pressed")
+        }
+        
+        popup.addButtons([button])
+        self.present(popup, animated: true, completion: nil)
+    }
+    
     
     // MARK: - MFMessageComposeViewControllerDelegate
     

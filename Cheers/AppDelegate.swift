@@ -22,16 +22,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //navigationBarAppearace.barTintColor = UIColor(hex: "b3ed89")
         navigationBarAppearace.barTintColor = UIColor.black
         
-        // Swipe screen setup
-        /*
-        let left = storyboard.instantiateViewController(withIdentifier: "left")
-        let middle = storyboard.instantiateViewController(withIdentifier: "middle")
-        let right = storyboard.instantiateViewController(withIdentifier: "right")
-        let top = storyboard.instantiateViewController(withIdentifier: "top")
-        // let bottom
-        let snapContainer = SnapContainerViewController.containerViewWith(left, middleVC: middle, rightVC: right, topVC: top, bottomVC: nil)
-        self.window?.rootViewController = snapContainer
-        self.window?.makeKeyAndVisible()*/
+        // Customize dialog appearance
+        let pv = PopupDialogDefaultView.appearance()
+        pv.titleFont    = UIFont(name: "Lato-Light", size: 20)!
+        pv.titleColor   = UIColor.black
+        pv.messageFont  = UIFont(name: "Lato-Light", size: 18)!
+        pv.messageColor = UIColor.gray
+ 
+        // Customize default button appearance
+        let db = DefaultButton.appearance()
+        db.titleFont      = UIFont(name: "Lato-Light", size: 16)!
+        db.titleColor     = UIColor.white
+        db.buttonColor    = UIColor(red:0.25, green:0.25, blue:0.29, alpha:1.00)
+        db.separatorColor = UIColor(red:0.20, green:0.20, blue:0.25, alpha:1.00)
         
         return true
     }

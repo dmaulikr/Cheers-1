@@ -23,6 +23,8 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     @IBOutlet weak var setBitmojiButton: UIButton!
     
+    @IBOutlet weak var infoButton: UIButton!
+    
     
     fileprivate var bitmojis = [String]()
     
@@ -48,6 +50,21 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
         HUD.flash(.label("Profile updated!"), delay: 0.5)
     }
     
+    
+    @IBAction func infoButtonTapped(_ sender: UIButton) {
+        let title = "WTF is BAC?"
+        let message = "BAC (Blood Alcohol Concentration) is the amount of alcohol in your blood. It is illegal to drive if your BAC is over 0.08"
+        
+        let popup = PopupDialog(title: title, message: message, image: nil)
+        
+        let button = DefaultButton(title: "got it") {
+            print("button pressed")
+        }
+        
+        popup.addButtons([button])
+        self.present(popup, animated: true, completion: nil)
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

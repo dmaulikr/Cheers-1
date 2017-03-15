@@ -45,6 +45,28 @@
 		9DD0DCCE1E729734005D2F74 /* FriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0DCCD1E729734005D2F74 /* FriendCollectionViewCell.swift */; };
 		9DD0DCD01E729742005D2F74 /* DrunkFriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0DCCF1E729742005D2F74 /* DrunkFriendCollectionViewCell.swift */; };
 		9DD0DCD21E72A016005D2F74 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0DCD11E72A016005D2F74 /* LocationViewController.swift */; };
+		9DDE35B21E794584009BA3E6 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 9DDE359A1E794584009BA3E6 /* .gitkeep */; };
+		9DDE35B31E794584009BA3E6 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE359C1E794584009BA3E6 /* FXBlurView.m */; };
+		9DDE35B41E794584009BA3E6 /* InteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE359D1E794584009BA3E6 /* InteractiveTransition.swift */; };
+		9DDE35B51E794584009BA3E6 /* PopupDialog+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE359E1E794584009BA3E6 /* PopupDialog+Keyboard.swift */; };
+		9DDE35B61E794584009BA3E6 /* PopupDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE359F1E794584009BA3E6 /* PopupDialog.swift */; };
+		9DDE35B71E794584009BA3E6 /* PopupDialogButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE35A01E794584009BA3E6 /* PopupDialogButton.swift */; };
+		9DDE35B81E794584009BA3E6 /* PopupDialogContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE35A11E794584009BA3E6 /* PopupDialogContainerView.swift */; };
+		9DDE35B91E794584009BA3E6 /* PopupDialogDefaultButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE35A21E794584009BA3E6 /* PopupDialogDefaultButtons.swift */; };
+		9DDE35BA1E794584009BA3E6 /* PopupDialogDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE35A31E794584009BA3E6 /* PopupDialogDefaultView.swift */; };
+		9DDE35BB1E794584009BA3E6 /* PopupDialogDefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE35A41E794584009BA3E6 /* PopupDialogDefaultViewController.swift */; };
+		9DDE35BC1E794584009BA3E6 /* PopupDialogOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE35A51E794584009BA3E6 /* PopupDialogOverlayView.swift */; };
+		9DDE35BD1E794584009BA3E6 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE35A61E794584009BA3E6 /* PresentationController.swift */; };
+		9DDE35BE1E794584009BA3E6 /* PresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE35A71E794584009BA3E6 /* PresentationManager.swift */; };
+		9DDE35BF1E794584009BA3E6 /* TransitionAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE35A81E794584009BA3E6 /* TransitionAnimations.swift */; };
+		9DDE35C01E794584009BA3E6 /* TransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE35A91E794584009BA3E6 /* TransitionAnimator.swift */; };
+		9DDE35C11E794584009BA3E6 /* TZSpacerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE35AB1E794584009BA3E6 /* TZSpacerView.swift */; };
+		9DDE35C21E794584009BA3E6 /* TZStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE35AC1E794584009BA3E6 /* TZStackView.swift */; };
+		9DDE35C31E794584009BA3E6 /* TZStackViewAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE35AD1E794584009BA3E6 /* TZStackViewAlignment.swift */; };
+		9DDE35C41E794584009BA3E6 /* TZStackViewDistribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE35AE1E794584009BA3E6 /* TZStackViewDistribution.swift */; };
+		9DDE35C51E794584009BA3E6 /* UIImageView+Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE35AF1E794584009BA3E6 /* UIImageView+Calculations.swift */; };
+		9DDE35C61E794584009BA3E6 /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE35B01E794584009BA3E6 /* UIView+Animations.swift */; };
+		9DDE35C71E794584009BA3E6 /* UIViewController+Visibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE35B11E794584009BA3E6 /* UIViewController+Visibility.swift */; };
 		C1793A591E766EE800887B0C /* DCPathButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C1793A561E766EE800887B0C /* DCPathButton.m */; };
 		C1793A5A1E766EE800887B0C /* DCPathItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C1793A581E766EE800887B0C /* DCPathItemButton.m */; };
 /* End PBXBuildFile section */
@@ -93,6 +115,29 @@
 		9DD0DCCD1E729734005D2F74 /* FriendCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCollectionViewCell.swift; sourceTree = "<group>"; };
 		9DD0DCCF1E729742005D2F74 /* DrunkFriendCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrunkFriendCollectionViewCell.swift; sourceTree = "<group>"; };
 		9DD0DCD11E72A016005D2F74 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		9DDE359A1E794584009BA3E6 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		9DDE359B1E794584009BA3E6 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
+		9DDE359C1E794584009BA3E6 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
+		9DDE359D1E794584009BA3E6 /* InteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveTransition.swift; sourceTree = "<group>"; };
+		9DDE359E1E794584009BA3E6 /* PopupDialog+Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PopupDialog+Keyboard.swift"; sourceTree = "<group>"; };
+		9DDE359F1E794584009BA3E6 /* PopupDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialog.swift; sourceTree = "<group>"; };
+		9DDE35A01E794584009BA3E6 /* PopupDialogButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogButton.swift; sourceTree = "<group>"; };
+		9DDE35A11E794584009BA3E6 /* PopupDialogContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogContainerView.swift; sourceTree = "<group>"; };
+		9DDE35A21E794584009BA3E6 /* PopupDialogDefaultButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogDefaultButtons.swift; sourceTree = "<group>"; };
+		9DDE35A31E794584009BA3E6 /* PopupDialogDefaultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogDefaultView.swift; sourceTree = "<group>"; };
+		9DDE35A41E794584009BA3E6 /* PopupDialogDefaultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogDefaultViewController.swift; sourceTree = "<group>"; };
+		9DDE35A51E794584009BA3E6 /* PopupDialogOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogOverlayView.swift; sourceTree = "<group>"; };
+		9DDE35A61E794584009BA3E6 /* PresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
+		9DDE35A71E794584009BA3E6 /* PresentationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationManager.swift; sourceTree = "<group>"; };
+		9DDE35A81E794584009BA3E6 /* TransitionAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionAnimations.swift; sourceTree = "<group>"; };
+		9DDE35A91E794584009BA3E6 /* TransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionAnimator.swift; sourceTree = "<group>"; };
+		9DDE35AB1E794584009BA3E6 /* TZSpacerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TZSpacerView.swift; sourceTree = "<group>"; };
+		9DDE35AC1E794584009BA3E6 /* TZStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TZStackView.swift; sourceTree = "<group>"; };
+		9DDE35AD1E794584009BA3E6 /* TZStackViewAlignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TZStackViewAlignment.swift; sourceTree = "<group>"; };
+		9DDE35AE1E794584009BA3E6 /* TZStackViewDistribution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TZStackViewDistribution.swift; sourceTree = "<group>"; };
+		9DDE35AF1E794584009BA3E6 /* UIImageView+Calculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Calculations.swift"; sourceTree = "<group>"; };
+		9DDE35B01E794584009BA3E6 /* UIView+Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Animations.swift"; sourceTree = "<group>"; };
+		9DDE35B11E794584009BA3E6 /* UIViewController+Visibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Visibility.swift"; sourceTree = "<group>"; };
 		B52B2CBEAFF6980F4C4B2420 /* Pods_Cheers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cheers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1793A551E766EE800887B0C /* DCPathButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPathButton.h; sourceTree = "<group>"; };
 		C1793A561E766EE800887B0C /* DCPathButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPathButton.m; sourceTree = "<group>"; };
@@ -257,6 +302,7 @@
 		9DD0DCAD1E7270BE005D2F74 /* Cheers */ = {
 			isa = PBXGroup;
 			children = (
+				9DDE35991E794584009BA3E6 /* PopupDialog */,
 				9DBDD0531E78F13E0057756E /* Lato */,
 				9D6D9AF01E77BDDC008B106A /* UPCarouselFlowLayout */,
 				9DD0DCAE1E7270BE005D2F74 /* AppDelegate.swift */,
@@ -294,6 +340,44 @@
 				9DD0DCC71E727831005D2F74 /* VerticalScrollViewController.swift */,
 			);
 			name = "Swipe Screens";
+			sourceTree = "<group>";
+		};
+		9DDE35991E794584009BA3E6 /* PopupDialog */ = {
+			isa = PBXGroup;
+			children = (
+				9DDE359A1E794584009BA3E6 /* .gitkeep */,
+				9DDE359B1E794584009BA3E6 /* FXBlurView.h */,
+				9DDE359C1E794584009BA3E6 /* FXBlurView.m */,
+				9DDE359D1E794584009BA3E6 /* InteractiveTransition.swift */,
+				9DDE359E1E794584009BA3E6 /* PopupDialog+Keyboard.swift */,
+				9DDE359F1E794584009BA3E6 /* PopupDialog.swift */,
+				9DDE35A01E794584009BA3E6 /* PopupDialogButton.swift */,
+				9DDE35A11E794584009BA3E6 /* PopupDialogContainerView.swift */,
+				9DDE35A21E794584009BA3E6 /* PopupDialogDefaultButtons.swift */,
+				9DDE35A31E794584009BA3E6 /* PopupDialogDefaultView.swift */,
+				9DDE35A41E794584009BA3E6 /* PopupDialogDefaultViewController.swift */,
+				9DDE35A51E794584009BA3E6 /* PopupDialogOverlayView.swift */,
+				9DDE35A61E794584009BA3E6 /* PresentationController.swift */,
+				9DDE35A71E794584009BA3E6 /* PresentationManager.swift */,
+				9DDE35A81E794584009BA3E6 /* TransitionAnimations.swift */,
+				9DDE35A91E794584009BA3E6 /* TransitionAnimator.swift */,
+				9DDE35AA1E794584009BA3E6 /* TZStackView */,
+				9DDE35AF1E794584009BA3E6 /* UIImageView+Calculations.swift */,
+				9DDE35B01E794584009BA3E6 /* UIView+Animations.swift */,
+				9DDE35B11E794584009BA3E6 /* UIViewController+Visibility.swift */,
+			);
+			path = PopupDialog;
+			sourceTree = SOURCE_ROOT;
+		};
+		9DDE35AA1E794584009BA3E6 /* TZStackView */ = {
+			isa = PBXGroup;
+			children = (
+				9DDE35AB1E794584009BA3E6 /* TZSpacerView.swift */,
+				9DDE35AC1E794584009BA3E6 /* TZStackView.swift */,
+				9DDE35AD1E794584009BA3E6 /* TZStackViewAlignment.swift */,
+				9DDE35AE1E794584009BA3E6 /* TZStackViewDistribution.swift */,
+			);
+			path = TZStackView;
 			sourceTree = "<group>";
 		};
 		CAF96CCB6D7576E597D716C2 /* Frameworks */ = {
@@ -387,6 +471,7 @@
 				9DBDD0681E78F13E0057756E /* Lato-Regular.ttf in Resources */,
 				9DD0DCB41E7270BE005D2F74 /* Main.storyboard in Resources */,
 				9DBDD0671E78F13E0057756E /* Lato-LightItalic.ttf in Resources */,
+				9DDE35B21E794584009BA3E6 /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,13 +531,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DD0DCD01E729742005D2F74 /* DrunkFriendCollectionViewCell.swift in Sources */,
+				9DDE35C21E794584009BA3E6 /* TZStackView.swift in Sources */,
+				9DDE35B91E794584009BA3E6 /* PopupDialogDefaultButtons.swift in Sources */,
+				9DDE35B51E794584009BA3E6 /* PopupDialog+Keyboard.swift in Sources */,
 				9DD0DCCE1E729734005D2F74 /* FriendCollectionViewCell.swift in Sources */,
 				9DD0DCC51E727812005D2F74 /* FriendsViewController.swift in Sources */,
 				9D6D9AF51E77BDDC008B106A /* UPCarouselFlowLayout.swift in Sources */,
+				9DDE35C41E794584009BA3E6 /* TZStackViewDistribution.swift in Sources */,
 				9D6D9AE41E778852008B106A /* PersonalizeViewController.swift in Sources */,
+				9DDE35BA1E794584009BA3E6 /* PopupDialogDefaultView.swift in Sources */,
 				9D6D9AE91E77B5A1008B106A /* CarouselCollectionViewCell.swift in Sources */,
+				9DDE35BE1E794584009BA3E6 /* PresentationManager.swift in Sources */,
+				9DDE35BF1E794584009BA3E6 /* TransitionAnimations.swift in Sources */,
+				9DDE35C71E794584009BA3E6 /* UIViewController+Visibility.swift in Sources */,
 				C1793A591E766EE800887B0C /* DCPathButton.m in Sources */,
 				9DD0DCC91E727831005D2F74 /* VerticalScrollViewController.swift in Sources */,
+				9DDE35B31E794584009BA3E6 /* FXBlurView.m in Sources */,
+				9DDE35B61E794584009BA3E6 /* PopupDialog.swift in Sources */,
+				9DDE35B81E794584009BA3E6 /* PopupDialogContainerView.swift in Sources */,
+				9DDE35BD1E794584009BA3E6 /* PresentationController.swift in Sources */,
+				9DDE35C51E794584009BA3E6 /* UIImageView+Calculations.swift in Sources */,
+				9DDE35C31E794584009BA3E6 /* TZStackViewAlignment.swift in Sources */,
 				9D369DF71E73E5E200E9B183 /* FluidViewController.swift in Sources */,
 				9DD0DCD21E72A016005D2F74 /* LocationViewController.swift in Sources */,
 				9D6D9AF91E77CC14008B106A /* ProgressView.swift in Sources */,
@@ -460,13 +559,20 @@
 				9D6D9AFD1E77D8C1008B106A /* MessageViewController.swift in Sources */,
 				9DBDD0491E77DECC0057756E /* FriendProfileViewController.swift in Sources */,
 				9DD0DCCC1E727E68005D2F74 /* DrinkingBuddy.swift in Sources */,
+				9DDE35C11E794584009BA3E6 /* TZSpacerView.swift in Sources */,
+				9DDE35C61E794584009BA3E6 /* UIView+Animations.swift in Sources */,
 				9DD0DCB71E7270BE005D2F74 /* Cheers.xcdatamodeld in Sources */,
+				9DDE35B71E794584009BA3E6 /* PopupDialogButton.swift in Sources */,
 				9DC225301E734E9E0001DDFA /* Extensions.swift in Sources */,
+				9DDE35BC1E794584009BA3E6 /* PopupDialogOverlayView.swift in Sources */,
 				C1793A5A1E766EE800887B0C /* DCPathItemButton.m in Sources */,
+				9DDE35C01E794584009BA3E6 /* TransitionAnimator.swift in Sources */,
 				9DC225371E7377CE0001DDFA /* GradientMaskView.swift in Sources */,
 				9DD0DCAF1E7270BE005D2F74 /* AppDelegate.swift in Sources */,
 				9DBDD04C1E77E7490057756E /* UserInfo.swift in Sources */,
 				9D369DFA1E74085B00E9B183 /* MyNightViewController.swift in Sources */,
+				9DDE35B41E794584009BA3E6 /* InteractiveTransition.swift in Sources */,
+				9DDE35BB1E794584009BA3E6 /* PopupDialogDefaultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
