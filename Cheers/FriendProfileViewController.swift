@@ -25,7 +25,9 @@ class FriendProfileViewController: UIViewController, MFMessageComposeViewControl
     
     @IBOutlet weak var profileImage: UIImageView!
     
+    @IBOutlet weak var bacView: UIView!
 
+    
     @IBAction func dismissProfile(_ sender: UIButton) {
         
         self.dismiss(animated: true, completion: nil)
@@ -57,6 +59,15 @@ class FriendProfileViewController: UIViewController, MFMessageComposeViewControl
     override func viewDidLoad() {
         super.viewDidLoad()
         nameLabel.text = friend?.name
+        
+        setupUI()
+    }
+    
+    private func setupUI() {
+        self.bacView.layer.cornerRadius = 12
+        self.bacView.clipsToBounds = true
+        self.bacView.layer.borderWidth = 1.0
+        self.bacView.layer.borderColor = UIColor.gray.cgColor
     }
     
     

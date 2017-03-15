@@ -21,6 +21,8 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     @IBOutlet weak var drinkLimitLabel: UILabel!
     
+    @IBOutlet weak var setBitmojiButton: UIButton!
+    
     
     fileprivate var bitmojis = [String]()
     
@@ -55,12 +57,8 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
         createBitmojis()
         self.currentPage = 0
         
-        self.bacView.layer.cornerRadius = 12
-        self.bacView.clipsToBounds = true
-        self.bacView.layer.borderWidth = 1.0
-        self.bacView.layer.borderColor = UIColor.gray.cgColor
-        
         setupLabelInfo()
+        setupUI()
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateDrinkCountLabel(notification:)), name: Notification.Name(rawValue: "drinkCountChange"), object: nil)
     }
@@ -69,6 +67,17 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
         let currDrink = UserInfo.numDrinks
         currDrinkCountLabel.text = String(currDrink)
         print ("drink counted")
+    }
+    
+    private func setupUI() {
+        self.bacView.layer.cornerRadius = 12
+        self.bacView.clipsToBounds = true
+        self.bacView.layer.borderWidth = 1.0
+        self.bacView.layer.borderColor = UIColor.gray.cgColor
+        
+        self.setBitmojiButton.layer.borderColor = UIColor.gray.cgColor
+        self.setBitmojiButton.layer.borderWidth = 1.0
+        self.setBitmojiButton.layer.cornerRadius = 10
     }
     
     private func setupLabelInfo() {
@@ -83,7 +92,7 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
         let layout = self.collectionView.collectionViewLayout as? UPCarouselFlowLayout
         
         // change this visibleOffset for the items on the side
-        layout?.spacingMode = UPCarouselFlowLayoutSpacingMode.overlap(visibleOffset: 60)
+        layout?.spacingMode = UPCarouselFlowLayoutSpacingMode.overlap(visibleOffset: 80)
     }
     
     private func createBitmojis() {
@@ -108,12 +117,9 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // probs do some more stuff here
-        let bitmoji = bitmojis[indexPath.item]
-        let alert = UIAlertController(title: "hello", message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let heightPerItem = self.view.frame.height
+        return CGSize(width: heightPerItem, height: heightPerItem)
     }
     
     // MARK: - UIScrollViewDelegate

@@ -19,6 +19,9 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
     
     @IBOutlet weak var drinkLabel: UILabel!
     
+    @IBOutlet weak var drinksInLabel: UILabel!
+    
+    
     
     // MARK: - Properties
     var fluidView: BAFluidView?
@@ -31,6 +34,7 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
     
     var drinkSelected = false
     var numDrinks = 0
+    var percentIncrement: Double = 0.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,11 +43,19 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
         startFluidAnimation()
         configureButtons()
         
+        // set up percentIncrement
+        if (UserInfo.drinkLimit == 0) {
+            percentIncrement = 1.0
+        } else {
+            percentIncrement = 1.0 / Double(UserInfo.drinkLimit)
+        }
+        
+        print (String(percentIncrement))
     }
     
     @IBAction func swipeToAddDrink(_ sender: UISwipeGestureRecognizer) {
         if drinkSelected {
-            level += 0.1 //incrementing by 10% right now
+            level += percentIncrement
             fluidView?.fill(to: level as NSNumber!)
             fluidView?.fillColor = cupButton.selectedButton.itemColor
             numDrinks += 1
@@ -51,17 +63,23 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
             // kinda hacky but wtv
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "drinkCountChange"), object: nil)
             
+            drinksInLabel.text = (numDrinks == 1) ? "drink in" : "drinks in"
+        
             animateDrinkCountChange()
         }
     }
     
     @IBAction func swipeToMinusDrink(_ sender: UISwipeGestureRecognizer) {
         if drinkSelected {
-            level -= 0.1
+            level -= percentIncrement
             fluidView?.fill(to: level as NSNumber!)
-            numDrinks -= 1
-            UserInfo.numDrinks = self.numDrinks
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "drinkCountChange"), object: nil)
+            if numDrinks > 0 {
+                numDrinks -= 1
+                UserInfo.numDrinks = self.numDrinks
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "drinkCountChange"), object: nil)
+            }
+            
+            drinksInLabel.text = (numDrinks == 1) ? "drink in" : "drinks in"
             
             animateDrinkCountChange()
         }

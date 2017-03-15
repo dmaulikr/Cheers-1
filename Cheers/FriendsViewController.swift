@@ -135,10 +135,10 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
     
     private func createFriends() {
         let coord = CLLocationCoordinate2D(latitude: 37.445158, longitude: -122.163913)
-        let emily = DrinkingBuddy(name: "Emily", status: DrinkingBuddy.Status.dangerZone, title: nil, subtitle: "The Patio", coordinate: coord, phone: "6073791277")
-        let catherine = DrinkingBuddy(name: "Catherine", status: DrinkingBuddy.Status.fine, title: nil, subtitle: "The Patio", coordinate: coord, phone: "9492417906")
-        let jeremy = DrinkingBuddy(name: "Jeremy", status: DrinkingBuddy.Status.fine, title: nil, subtitle: "The Patio", coordinate: coord, phone: "5038676659")
-        let shubha = DrinkingBuddy(name: "Shubha", status: DrinkingBuddy.Status.left, title: nil, subtitle: "The Patio", coordinate: coord, phone: "4085945805")
+        let emily = DrinkingBuddy(name: "minna", status: DrinkingBuddy.Status.dangerZone, title: nil, subtitle: "The Patio", coordinate: coord, phone: "6073791277", image: "minna-bitmoji")
+        let catherine = DrinkingBuddy(name: "catherine", status: DrinkingBuddy.Status.fine, title: nil, subtitle: "The Patio", coordinate: coord, phone: "9492417906", image: "em-bitmoji-shadow-noline")
+        let jeremy = DrinkingBuddy(name: "jeremy", status: DrinkingBuddy.Status.fine, title: nil, subtitle: "The Patio", coordinate: coord, phone: "5038676659", image: "orangerect")
+        let shubha = DrinkingBuddy(name: "shubha", status: DrinkingBuddy.Status.left, title: nil, subtitle: "The Patio", coordinate: coord, phone: "4085945805", image: "em-bitmoji-shadow-noline")
         partyPeople = [emily, catherine, jeremy, shubha, jeremy, jeremy, jeremy]
     }
     

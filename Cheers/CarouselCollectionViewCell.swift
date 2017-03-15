@@ -26,6 +26,6 @@ class CarouselCollectionViewCell: UICollectionViewCell {
         
         self.layer.cornerRadius = max(self.frame.size.width, self.frame.size.height) / 2
         self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderColor = UIColor.gray.cgColor
     }
 }

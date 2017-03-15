@@ -20,5 +20,9 @@ class FriendCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    var friend: DrinkingBuddy?
+    var friend: DrinkingBuddy? {
+        didSet {
+            friendImage.image = UIImage(named: (friend?.image)!)
+        }
+    }
 }

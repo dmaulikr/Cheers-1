@@ -24,14 +24,12 @@ class PersonalizeViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        self.headerView.layer.borderWidth = 1.0
-        self.headerView.layer.borderColor = UIColor.black.cgColor
         
         self.circularSlider.textfield.isUserInteractionEnabled = false
-        
         self.circularSlider.centeredView.layer.borderWidth = 0.0
         self.circularSlider.centeredView.layer.borderColor = UIColor.white.cgColor
         
+        self.goOutButton.layer.cornerRadius = 5
     }
     
     // MARK: - Properties
