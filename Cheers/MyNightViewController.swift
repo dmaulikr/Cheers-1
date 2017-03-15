@@ -10,28 +10,28 @@ import UIKit
 import PKHUD
 
 class MyNightViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    // MARK: - Outlets
-    
-    @IBOutlet weak var collectionView: UICollectionView!
-    
-    @IBOutlet weak var bacView: UIView!
-    
-    @IBOutlet weak var currDrinkCountLabel: UILabel!
-    
-    @IBOutlet weak var drinkLimitLabel: UILabel!
-    
-    @IBOutlet weak var setBitmojiButton: UIButton!
-    
-    @IBOutlet weak var infoButton: UIButton!
-    
-<<<<<<< HEAD
+
+// MARK: - Outlets
+
+@IBOutlet weak var collectionView: UICollectionView!
+
+@IBOutlet weak var bacView: UIView!
+
+@IBOutlet weak var currDrinkCountLabel: UILabel!
+
+@IBOutlet weak var drinkLimitLabel: UILabel!
+
+@IBOutlet weak var setBitmojiButton: UIButton!
+
+@IBOutlet weak var infoButton: UIButton!
+
     @IBAction func goDownToGroupPage(_ sender: Any) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let snapContainer = appDelegate.window?.rootViewController as! SnapContainerViewController
         let groupViewOffset = snapContainer.middleVertScrollVc.middleVc.view.frame.origin
         snapContainer.middleVertScrollVc.scrollView.setContentOffset(groupViewOffset, animated: false)
     }
+
     @IBOutlet weak var bacLabel: UILabel!
     
     fileprivate var bitmojis = [String]()
