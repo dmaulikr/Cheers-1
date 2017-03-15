@@ -68,7 +68,7 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
         //let image = UIImage(named: "emily2")
         let popup = PopupDialog(title: title, message: message, image: nil)
         
-        let button = DefaultButton(title: "bounce") {
+        let button = DefaultButton(title: "BOUNCE") {
             print("button pressed")
         }
         
@@ -109,8 +109,6 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.view.layoutIfNeeded()
-        
-        configureButtons()
         
         // mask view shit
         /*guard let collectionView = collectionView,
@@ -159,25 +157,17 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
         static let sectionInsets = UIEdgeInsetsMake(1.0, 1.0, 1.0, 1.0)
     }
     
-    private func configureButtons() {
-        // not really working right now
-        chatButton.layer.cornerRadius = 0.5*chatButton.bounds.size.width
-        chatButton.layer.borderColor = UIColor.white.cgColor
-        chatButton.clipsToBounds = true
-        //chatButton.layer.shadowColor = UIColor.blue.cgColor
-        chatButton.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-        chatButton.layer.shadowRadius = 5
-        chatButton.layer.shadowOpacity = 1
-
-    }
     
     private func createFriends() {
         let coord = CLLocationCoordinate2D(latitude: 37.445158, longitude: -122.163913)
-        let emily = DrinkingBuddy(name: "minna", status: DrinkingBuddy.Status.dangerZone, title: nil, subtitle: "The Patio", coordinate: coord, phone: "6073791277", image: "minna-bitmoji")
-        let catherine = DrinkingBuddy(name: "catherine", status: DrinkingBuddy.Status.fine, title: nil, subtitle: "The Patio", coordinate: coord, phone: "9492417906", image: "em-bitmoji-shadow-noline")
-        let jeremy = DrinkingBuddy(name: "jeremy", status: DrinkingBuddy.Status.fine, title: nil, subtitle: "The Patio", coordinate: coord, phone: "5038676659", image: "orangerect")
-        let shubha = DrinkingBuddy(name: "shubha", status: DrinkingBuddy.Status.left, title: nil, subtitle: "The Patio", coordinate: coord, phone: "4085945805", image: "em-bitmoji-shadow-noline")
-        partyPeople = [emily, catherine, jeremy, shubha, jeremy, jeremy, jeremy]
+        let minna = DrinkingBuddy(name: "minna", status: DrinkingBuddy.Status.dangerZone, title: nil, subtitle: "The Patio", coordinate: coord, phone: "6073791277", image: "minna-bitmoji")
+        let catherine = DrinkingBuddy(name: "catherine", status: DrinkingBuddy.Status.fine, title: nil, subtitle: "The Patio", coordinate: coord, phone: "9492417906", image: "cat-profile-bitmoji")
+        let me = DrinkingBuddy(name: "me", status: DrinkingBuddy.Status.fine, title: nil, subtitle: "The Patio", coordinate: coord, phone: "9492417906", image: "emily2") //emily
+        let jeremy = DrinkingBuddy(name: "jeremy", status: DrinkingBuddy.Status.fine, title: nil, subtitle: "The Patio", coordinate: coord, phone: "5038676659", image: "jeremy-profile-bitmoji")
+        let shubha = DrinkingBuddy(name: "shubha", status: DrinkingBuddy.Status.left, title: nil, subtitle: "The Patio", coordinate: coord, phone: "4085945805", image: "shubha-sleeping-bitmoji")
+        let nick = DrinkingBuddy(name: "nick", status: DrinkingBuddy.Status.left, title: nil, subtitle: "The Patio", coordinate: coord, phone: "4085945805", image: "nick-sleeping-bitmoji")
+        let raven = DrinkingBuddy(name: "raven", status: DrinkingBuddy.Status.left, title: nil, subtitle: "The Patio", coordinate: coord, phone: "4085945805", image: "raven-sleeping-bitmoji")
+        partyPeople = [minna, catherine, me, jeremy, shubha, nick, raven]
     }
     
     // MARK: - UIScrollViewDelegate

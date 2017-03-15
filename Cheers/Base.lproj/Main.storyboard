@@ -75,13 +75,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5h-Qh-IL4">
-                                        <rect key="frame" x="312" y="46" width="25" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="beer-main"/>
-                                    </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="emily1" translatesAutoresizingMaskIntoConstraints="NO" id="tMh-eG-qpk">
-                                        <rect key="frame" x="21" y="26" width="59" height="55"/>
+                                        <rect key="frame" x="26" y="26" width="59" height="55"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
@@ -331,6 +326,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Hi, Emily" id="V1i-jQ-V0S"/>
                     <connections>
+                        <outlet property="bacLabel" destination="azS-Xx-2ui" id="WSb-D1-WVW"/>
                         <outlet property="bacView" destination="CnX-pK-wX2" id="2DI-YL-Dqo"/>
                         <outlet property="collectionView" destination="zx0-B8-Gc8" id="VqK-VG-uRt"/>
                         <outlet property="currDrinkCountLabel" destination="8ez-qe-xhi" id="Vgq-CW-lwM"/>
@@ -611,9 +607,9 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxz-Uj-83V">
-                                <rect key="frame" x="81" y="569" width="78" height="78"/>
+                                <rect key="frame" x="94" y="569" width="68" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="cocktail-main">
+                                <state key="normal" image="text-group-icon-with-text">
                                     <color key="titleShadowColor" red="1" green="0.53327105793142793" blue="0.50883088588606284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -621,9 +617,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRy-U2-hIh">
-                                <rect key="frame" x="215" y="569" width="67" height="67"/>
+                                <rect key="frame" x="213" y="569" width="68" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="beer"/>
+                                <state key="normal" image="bounce-icon-with-text"/>
                                 <connections>
                                     <action selector="bounce:" destination="mx0-iY-FJv" eventType="touchUpInside" id="7YM-f9-F0p"/>
                                 </connections>
@@ -728,6 +724,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You've exceeded your limit!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjt-Vg-BET">
+                                <rect key="frame" x="74" y="250" width="226" height="116"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.98473873331311457" green="0.98964114717151597" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -746,6 +749,7 @@
                     <connections>
                         <outlet property="drinkLabel" destination="z0U-4k-xMg" id="VUR-bY-uQi"/>
                         <outlet property="drinksInLabel" destination="egA-2p-Cvc" id="WxG-Go-kHL"/>
+                        <outlet property="exceedLabel" destination="Bjt-Vg-BET" id="rci-aP-ZAA"/>
                         <outlet property="swipeDownGesture" destination="9EI-GH-Q6G" id="gWe-sv-Z0o"/>
                         <outlet property="swipeUpGesture" destination="3BS-ZJ-rpo" id="glv-Qp-03W"/>
                     </connections>
@@ -769,7 +773,7 @@
             <objects>
                 <navigationController storyboardIdentifier="middle" automaticallyAdjustsScrollViewInsets="NO" id="sCI-NC-dvQ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="o0t-oH-jXs">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="o0t-oH-jXs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -787,7 +791,7 @@
             <objects>
                 <navigationController storyboardIdentifier="left" automaticallyAdjustsScrollViewInsets="NO" id="C9o-q2-fFP" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="7yk-ed-tcl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7yk-ed-tcl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -805,7 +809,7 @@
             <objects>
                 <navigationController storyboardIdentifier="right" automaticallyAdjustsScrollViewInsets="NO" id="BtV-Xl-Pzl" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="A2x-YH-Pfp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="A2x-YH-Pfp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -823,7 +827,7 @@
             <objects>
                 <navigationController storyboardIdentifier="top" automaticallyAdjustsScrollViewInsets="NO" id="CyX-UH-uTj" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Xjq-Hc-TwU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xjq-Hc-TwU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -838,8 +842,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="beer" width="78" height="78"/>
-        <image name="beer-main" width="98" height="97"/>
+        <image name="bounce-icon-with-text" width="85" height="93"/>
         <image name="cocktail-main" width="98" height="97"/>
         <image name="dancing" width="25" height="25"/>
         <image name="drink" width="25" height="25"/>
@@ -848,6 +851,7 @@
         <image name="minna-bitmoji" width="113" height="181"/>
         <image name="pin" width="25" height="25"/>
         <image name="redrect" width="750" height="370"/>
+        <image name="text-group-icon-with-text" width="86" height="94"/>
         <image name="wine-main" width="98" height="97"/>
     </resources>
 </document>

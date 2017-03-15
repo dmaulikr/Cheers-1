@@ -29,6 +29,15 @@ struct UserInfo {
         }
     }
     
+    static var myBitmoji: String {
+        get {
+            return defaults.object(forKey: "MyBitmoji") as? String ?? "emily2" //replace this with default
+        }
+        set {
+            defaults.set(newValue, forKey: "MyBitmoji")
+        }
+    }
+    
     // MARK: Public API
     static private let defaults = UserDefaults.standard
 }

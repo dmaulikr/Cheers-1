@@ -28,6 +28,9 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
         snapContainer.scrollView.setContentOffset(groupViewOffset, animated: false)
     }
     
+    @IBOutlet weak var exceedLabel: UILabel!
+    
+    
     
     // MARK: - Properties
     var fluidView: BAFluidView?
@@ -56,7 +59,7 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
             percentIncrement = 1.0 / Double(UserInfo.drinkLimit)
         }
         
-        print (String(percentIncrement))
+        exceedLabel.isHidden = true
     }
     
     @IBAction func swipeToAddDrink(_ sender: UISwipeGestureRecognizer) {
@@ -72,14 +75,22 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
             drinksInLabel.text = (numDrinks == 1) ? "drink in" : "drinks in"
         
             animateDrinkCountChange()
+            
+            if (numDrinks > UserInfo.drinkLimit) {
+                exceedLabel.isHidden = false
+                
+            }
+            if (numDrinks == UserInfo.drinkLimit) {
+                limitReachedAlert()
+            }
         }
     }
     
     @IBAction func swipeToMinusDrink(_ sender: UISwipeGestureRecognizer) {
         if drinkSelected {
-            level -= percentIncrement
-            fluidView?.fill(to: level as NSNumber!)
             if numDrinks > 0 {
+                level -= percentIncrement
+                fluidView?.fill(to: level as NSNumber!)
                 numDrinks -= 1
                 UserInfo.numDrinks = self.numDrinks
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "drinkCountChange"), object: nil)
@@ -88,7 +99,28 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
             drinksInLabel.text = (numDrinks == 1) ? "drink in" : "drinks in"
             
             animateDrinkCountChange()
+            
+            if (numDrinks <= UserInfo.drinkLimit) {
+                exceedLabel.isHidden = true
+            }
+            if (numDrinks == UserInfo.drinkLimit) {
+                limitReachedAlert()
+            }
         }
+    }
+    
+    private func limitReachedAlert() {
+        let title = "Warning"
+        let message = "You have reached your drink limit for the night."
+        
+        let popup = PopupDialog(title: title, message: message, image: nil)
+        
+        let button = DefaultButton(title: "OK") {
+            print("button pressed")
+        }
+        
+        popup.addButtons([button])
+        self.present(popup, animated: true, completion: nil)
     }
     
     private func animateDrinkCountChange() {

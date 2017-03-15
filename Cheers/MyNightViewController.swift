@@ -25,21 +25,18 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     @IBOutlet weak var infoButton: UIButton!
     
+<<<<<<< HEAD
     @IBAction func goDownToGroupPage(_ sender: Any) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let snapContainer = appDelegate.window?.rootViewController as! SnapContainerViewController
         let groupViewOffset = snapContainer.middleVertScrollVc.middleVc.view.frame.origin
         snapContainer.middleVertScrollVc.scrollView.setContentOffset(groupViewOffset, animated: false)
     }
+    @IBOutlet weak var bacLabel: UILabel!
     
     fileprivate var bitmojis = [String]()
     
-    fileprivate var currentPage: Int = 0 {
-        didSet {
-            let bitmoji = bitmojis[currentPage]
-            // do something here, like save it?
-        }
-    }
+    fileprivate var currentPage: Int = 0
     
     fileprivate var pageSize: CGSize {
         let layout = self.collectionView.collectionViewLayout as! UPCarouselFlowLayout
@@ -53,6 +50,8 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     @IBAction func setBitmoji(_ sender: UIButton) {
+        let selectedBitmoji = bitmojis[currentPage]
+        UserInfo.myBitmoji = selectedBitmoji
         HUD.flash(.label("Profile updated!"), delay: 0.5)
     }
     
@@ -63,7 +62,7 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         let popup = PopupDialog(title: title, message: message, image: nil)
         
-        let button = DefaultButton(title: "got it") {
+        let button = DefaultButton(title: "OK") {
             print("button pressed")
         }
         
@@ -82,6 +81,7 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         setupLabelInfo()
         setupUI()
+        updateLabelUI()
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateDrinkCountLabel(notification:)), name: Notification.Name(rawValue: "drinkCountChange"), object: nil)
     }
@@ -89,7 +89,7 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
     func updateDrinkCountLabel(notification: Notification) {
         let currDrink = UserInfo.numDrinks
         currDrinkCountLabel.text = String(currDrink)
-        print ("drink counted")
+        updateLabelUI()
     }
     
     private func setupUI() {
@@ -104,10 +104,19 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     private func setupLabelInfo() {
-        let currDrink = UserInfo.numDrinks
-        currDrinkCountLabel.text = String(currDrink)
+        let currDrinkCount = UserInfo.numDrinks
+        currDrinkCountLabel.text = String(currDrinkCount)
         let drinkLim = UserInfo.drinkLimit
         drinkLimitLabel.text = String(drinkLim)
+    }
+    
+    private func updateLabelUI() {
+        let currDrinkCount = UserInfo.numDrinks
+        let bac = BacInfo.drinkToBACDict[currDrinkCount]
+        let colorHex = BacInfo.BACToColorDict[bac!]
+        bacLabel.text = bac
+        bacLabel.textColor = UIColor(hex: colorHex!)
+        currDrinkCountLabel.textColor = UIColor(hex: colorHex!)
     }
     
     

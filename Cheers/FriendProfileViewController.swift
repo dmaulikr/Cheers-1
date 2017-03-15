@@ -58,9 +58,13 @@ class FriendProfileViewController: UIViewController, MFMessageComposeViewControl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameLabel.text = friend?.name
-        
+        populateFriend()
         setupUI()
+    }
+    
+    func populateFriend() {
+        nameLabel.text = friend?.name
+        profileImage?.image = UIImage(named: (friend?.image)!)
     }
     
     private func setupUI() {
