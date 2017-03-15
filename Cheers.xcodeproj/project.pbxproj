@@ -13,8 +13,6 @@
 		9D6D9AE41E778852008B106A /* PersonalizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D9AE31E778852008B106A /* PersonalizeViewController.swift */; };
 		9D6D9AE91E77B5A1008B106A /* CarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D9AE81E77B5A1008B106A /* CarouselCollectionViewCell.swift */; };
 		9D6D9AF51E77BDDC008B106A /* UPCarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D9AF31E77BDDC008B106A /* UPCarouselFlowLayout.swift */; };
-		9D6D9AF91E77CC14008B106A /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D9AF81E77CC14008B106A /* ProgressView.swift */; };
-		9D6D9AFD1E77D8C1008B106A /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D9AFC1E77D8C0008B106A /* MessageViewController.swift */; };
 		9DBDD0491E77DECC0057756E /* FriendProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBDD0481E77DECC0057756E /* FriendProfileViewController.swift */; };
 		9DBDD04C1E77E7490057756E /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBDD04B1E77E7490057756E /* UserInfo.swift */; };
 		9DBDD04E1E77F1660057756E /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DBDD04D1E77F1660057756E /* PKHUD.framework */; };
@@ -81,8 +79,6 @@
 		9D6D9AEE1E77BA6F008B106A /* UPCarouselFlowLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UPCarouselFlowLayout.framework; path = "Pods/../build/Debug-iphoneos/UPCarouselFlowLayout/UPCarouselFlowLayout.framework"; sourceTree = "<group>"; };
 		9D6D9AF21E77BDDC008B106A /* UPCarouselFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCarouselFlowLayout.h; sourceTree = "<group>"; };
 		9D6D9AF31E77BDDC008B106A /* UPCarouselFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPCarouselFlowLayout.swift; sourceTree = "<group>"; };
-		9D6D9AF81E77CC14008B106A /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
-		9D6D9AFC1E77D8C0008B106A /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		9DBDD0481E77DECC0057756E /* FriendProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendProfileViewController.swift; sourceTree = "<group>"; };
 		9DBDD04B1E77E7490057756E /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		9DBDD04D1E77F1660057756E /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = "../../Library/Developer/Xcode/DerivedData/Cheers-grhqkqzfoebbttbpdbslvnsloepz/Build/Products/Debug-iphonesimulator/PKHUD/PKHUD.framework"; sourceTree = "<group>"; };
@@ -199,14 +195,6 @@
 			path = UPCarouselFlowLayout;
 			sourceTree = SOURCE_ROOT;
 		};
-		9D6D9AFA1E77CC4B008B106A /* Files not in use */ = {
-			isa = PBXGroup;
-			children = (
-				9D6D9AF81E77CC14008B106A /* ProgressView.swift */,
-			);
-			name = "Files not in use";
-			sourceTree = "<group>";
-		};
 		9D6D9AFB1E77CC74008B106A /* My Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,7 +236,6 @@
 				9DD0DCCD1E729734005D2F74 /* FriendCollectionViewCell.swift */,
 				9DD0DCCF1E729742005D2F74 /* DrunkFriendCollectionViewCell.swift */,
 				9DD0DCC41E727812005D2F74 /* FriendsViewController.swift */,
-				9D6D9AFC1E77D8C0008B106A /* MessageViewController.swift */,
 				9DC225361E7377CE0001DDFA /* GradientMaskView.swift */,
 			);
 			name = "Friend Collection";
@@ -318,7 +305,6 @@
 				9DC2252C1E732CBE0001DDFA /* Friend Collection */,
 				9DD0DCCB1E727E68005D2F74 /* DrinkingBuddy.swift */,
 				9DBDD04B1E77E7490057756E /* UserInfo.swift */,
-				9D6D9AFA1E77CC4B008B106A /* Files not in use */,
 				9DC225341E7356B80001DDFA /* Assets */,
 				9DD0DCC31E7270D5005D2F74 /* Core Data */,
 			);
@@ -554,9 +540,7 @@
 				9DDE35C31E794584009BA3E6 /* TZStackViewAlignment.swift in Sources */,
 				9D369DF71E73E5E200E9B183 /* FluidViewController.swift in Sources */,
 				9DD0DCD21E72A016005D2F74 /* LocationViewController.swift in Sources */,
-				9D6D9AF91E77CC14008B106A /* ProgressView.swift in Sources */,
 				9DD0DCC81E727831005D2F74 /* SnapContainerViewController.swift in Sources */,
-				9D6D9AFD1E77D8C1008B106A /* MessageViewController.swift in Sources */,
 				9DBDD0491E77DECC0057756E /* FriendProfileViewController.swift in Sources */,
 				9DD0DCCC1E727E68005D2F74 /* DrinkingBuddy.swift in Sources */,
 				9DDE35C11E794584009BA3E6 /* TZSpacerView.swift in Sources */,
