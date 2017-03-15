@@ -21,6 +21,8 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
     
     @IBOutlet weak var drinksInLabel: UILabel!
     
+    @IBOutlet weak var exceedLabel: UILabel!
+    
     
     
     // MARK: - Properties
@@ -50,7 +52,7 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
             percentIncrement = 1.0 / Double(UserInfo.drinkLimit)
         }
         
-        print (String(percentIncrement))
+        exceedLabel.isHidden = true
     }
     
     @IBAction func swipeToAddDrink(_ sender: UISwipeGestureRecognizer) {
@@ -66,6 +68,10 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
             drinksInLabel.text = (numDrinks == 1) ? "drink in" : "drinks in"
         
             animateDrinkCountChange()
+            
+            if (numDrinks > UserInfo.drinkLimit) {
+                exceedLabel.isHidden = false
+            }
         }
     }
     
@@ -82,6 +88,10 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
             drinksInLabel.text = (numDrinks == 1) ? "drink in" : "drinks in"
             
             animateDrinkCountChange()
+            
+            if (numDrinks <= UserInfo.drinkLimit) {
+                exceedLabel.isHidden = true
+            }
         }
     }
     
