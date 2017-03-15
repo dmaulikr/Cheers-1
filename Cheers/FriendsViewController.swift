@@ -27,21 +27,21 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let snapContainer = appDelegate.window?.rootViewController as! SnapContainerViewController
         let manualTrackerViewOffset = snapContainer.leftVc.view.frame.origin
-        snapContainer.scrollView.setContentOffset(manualTrackerViewOffset, animated: false)
+        snapContainer.scrollView.setContentOffset(manualTrackerViewOffset, animated: true)
     }
     
     @IBAction func goToMap(_ sender: Any) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let snapContainer = appDelegate.window?.rootViewController as! SnapContainerViewController
         let mapViewOffset = snapContainer.rightVc.view.frame.origin
-        snapContainer.scrollView.setContentOffset(mapViewOffset, animated: false)
+        snapContainer.scrollView.setContentOffset(mapViewOffset, animated: true)
     }
 
     @IBAction func gotToMyProfile(_ sender: Any) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let snapContainer = appDelegate.window?.rootViewController as! SnapContainerViewController
         let myProfileViewOffset = snapContainer.middleVertScrollVc.topVc.view.frame.origin
-        snapContainer.middleVertScrollVc.scrollView.setContentOffset(myProfileViewOffset, animated: false)
+        snapContainer.middleVertScrollVc.scrollView.setContentOffset(myProfileViewOffset, animated: true)
     }
 
     @IBAction func messageGroup(_ sender: UIButton) {

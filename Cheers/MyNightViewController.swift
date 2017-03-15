@@ -29,7 +29,7 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let snapContainer = appDelegate.window?.rootViewController as! SnapContainerViewController
         let groupViewOffset = snapContainer.middleVertScrollVc.middleVc.view.frame.origin
-        snapContainer.middleVertScrollVc.scrollView.setContentOffset(groupViewOffset, animated: false)
+        snapContainer.middleVertScrollVc.scrollView.setContentOffset(groupViewOffset, animated: true)
     }
 
     @IBOutlet weak var bacLabel: UILabel!

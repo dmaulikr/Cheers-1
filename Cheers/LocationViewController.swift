@@ -17,7 +17,7 @@ class LocationViewController: UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let snapContainer = appDelegate.window?.rootViewController as! SnapContainerViewController
         let groupViewOffset = snapContainer.middleVertScrollVc.view.frame.origin
-        snapContainer.scrollView.setContentOffset(groupViewOffset, animated: false)
+        snapContainer.scrollView.setContentOffset(groupViewOffset, animated: true)
     }
     
     // Properties
