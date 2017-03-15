@@ -49,7 +49,7 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
         //let image = UIImage(named: "emily2")
         let popup = PopupDialog(title: title, message: message, image: nil)
         
-        let button = DefaultButton(title: "bounce") {
+        let button = DefaultButton(title: "BOUNCE") {
             print("button pressed")
         }
         
@@ -90,8 +90,6 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.view.layoutIfNeeded()
-        
-        configureButtons()
         
         // mask view shit
         /*guard let collectionView = collectionView,
@@ -140,17 +138,6 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
         static let sectionInsets = UIEdgeInsetsMake(1.0, 1.0, 1.0, 1.0)
     }
     
-    private func configureButtons() {
-        // not really working right now
-        chatButton.layer.cornerRadius = 0.5*chatButton.bounds.size.width
-        chatButton.layer.borderColor = UIColor.white.cgColor
-        chatButton.clipsToBounds = true
-        //chatButton.layer.shadowColor = UIColor.blue.cgColor
-        chatButton.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-        chatButton.layer.shadowRadius = 5
-        chatButton.layer.shadowOpacity = 1
-
-    }
     
     private func createFriends() {
         let coord = CLLocationCoordinate2D(latitude: 37.445158, longitude: -122.163913)
