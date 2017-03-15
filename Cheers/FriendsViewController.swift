@@ -135,9 +135,9 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
     
     private func createFriends() {
         let coord = CLLocationCoordinate2D(latitude: 37.445158, longitude: -122.163913)
-        let emily = DrinkingBuddy(name: "Emily", status: DrinkingBuddy.Status.dangerZone, title: nil, subtitle: "The Patio", coordinate: coord, phone: "4085945805")
-        let catherine = DrinkingBuddy(name: "Catherine", status: DrinkingBuddy.Status.fine, title: nil, subtitle: "The Patio", coordinate: coord, phone: "4085945805")
-        let jeremy = DrinkingBuddy(name: "Jeremy", status: DrinkingBuddy.Status.fine, title: nil, subtitle: "The Patio", coordinate: coord, phone: "4085945805")
+        let emily = DrinkingBuddy(name: "Emily", status: DrinkingBuddy.Status.dangerZone, title: nil, subtitle: "The Patio", coordinate: coord, phone: "6073791277")
+        let catherine = DrinkingBuddy(name: "Catherine", status: DrinkingBuddy.Status.fine, title: nil, subtitle: "The Patio", coordinate: coord, phone: "9492417906")
+        let jeremy = DrinkingBuddy(name: "Jeremy", status: DrinkingBuddy.Status.fine, title: nil, subtitle: "The Patio", coordinate: coord, phone: "5038676659")
         let shubha = DrinkingBuddy(name: "Shubha", status: DrinkingBuddy.Status.left, title: nil, subtitle: "The Patio", coordinate: coord, phone: "4085945805")
         partyPeople = [emily, catherine, jeremy, shubha, jeremy, jeremy, jeremy]
     }
@@ -154,21 +154,32 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return partyPeople.count
+        return partyPeople.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let buddy = partyPeople[indexPath.item]
+        if (indexPath.item == 0) {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GroupNameCell", for: indexPath)
+            cell.backgroundColor = UIColor.white
+            return cell
+        }
+        
+        let index = indexPath.item - 1 //offset the first cell
+        
+        // to make opaque
+        //cell.alpha = 0.4
+        
+        let buddy = partyPeople[index]
         if buddy.status == DrinkingBuddy.Status.dangerZone {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DrunkFriendCell", for: indexPath) as! DrunkFriendCollectionViewCell
-            cell.backgroundColor = UIColor.red
+            cell.backgroundColor = UIColor.white
             cell.name = buddy.name
             cell.friend = buddy
             return cell
         
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendCell", for: indexPath) as! FriendCollectionViewCell
-            cell.backgroundColor = UIColor.gray
+            cell.backgroundColor = UIColor.white
             cell.name = buddy.name
             cell.friend = buddy
             return cell
@@ -178,7 +189,16 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
     // MARK: - UICollectionViewDelegateFlowLayout
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let buddy = partyPeople[indexPath.item]
+        // if it's the group name cell
+        if (indexPath.item == 0) {
+            let width = view.frame.width - (Constants.sectionInsets.left * 2)
+            let height: CGFloat = 40.0
+            return CGSize(width: width, height: height)
+        }
+        
+        let index = indexPath.item - 1 //offset the first cell
+        
+        let buddy = partyPeople[index]
         var itemsInRow: CGFloat = 2.0
         var paddingSpace = Constants.sectionInsets.left * (itemsInRow + 1)
         var availableWidth = view.frame.width - paddingSpace

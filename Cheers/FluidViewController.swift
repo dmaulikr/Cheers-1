@@ -17,6 +17,8 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
     
     @IBOutlet var swipeDownGesture: UISwipeGestureRecognizer!
     
+    @IBOutlet weak var drinkLabel: UILabel!
+    
     
     // MARK: - Properties
     var fluidView: BAFluidView?
@@ -48,6 +50,8 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
             UserInfo.numDrinks = self.numDrinks
             // kinda hacky but wtv
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "drinkCountChange"), object: nil)
+            
+            animateDrinkCountChange()
         }
     }
     
@@ -58,8 +62,18 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
             numDrinks -= 1
             UserInfo.numDrinks = self.numDrinks
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "drinkCountChange"), object: nil)
+            
+            animateDrinkCountChange()
         }
-        
+    }
+    
+    private func animateDrinkCountChange() {
+        UIView.transition(with: drinkLabel,
+                          duration: 1.0,
+                          options: [.transitionCrossDissolve],
+                          animations: {
+                            self.drinkLabel.text = String(self.numDrinks)
+        }, completion: nil)
     }
     
     public func pathButton(_ dcPathButton: DCPathButton!, clickItemButtonAt itemButtonIndex: UInt) {
@@ -107,15 +121,7 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
         fluidView?.startAnimation()
         fluidView?.startTiltAnimation()
         
-        self.view.insertSubview(fluidView!, at: 1)
-        
-        // doesn't seem necessary
-        /*
-        UIView.animate(withDuration: 0.5, animations: {
-            self.fluidView?.alpha = 1.0
-        }) { (_) in
-            self.view.sendSubview(toBack: self.fluidView!)
-        }*/
+        self.view.insertSubview(fluidView!, at: 0)
     }
 
     /*

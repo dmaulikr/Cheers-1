@@ -21,6 +21,7 @@ class FriendProfileViewController: UIViewController, MFMessageComposeViewControl
     @IBOutlet weak var textButton: UIButton!
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var callButton: UIButton!
     
     @IBOutlet weak var profileImage: UIImageView!
     
@@ -42,7 +43,15 @@ class FriendProfileViewController: UIViewController, MFMessageComposeViewControl
         else {
             NSLog("your device do not support SMS....")
         }
+    }
+    
+    @IBAction func callFriend(_ sender: UIButton) {
         
+        let number = friend!.phone
+        //@available(iOS 10.0, *)
+        guard let no = URL(string: "telprompt://" + number) else { return }
+        
+        UIApplication.shared.open(no, options: [:], completionHandler: nil)
     }
     
     override func viewDidLoad() {

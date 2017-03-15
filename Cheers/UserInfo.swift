@@ -20,6 +20,15 @@ struct UserInfo {
         }
     }
     
+    static var drinkLimit: Int {
+        get {
+            return defaults.object(forKey: "DrinkLimit") as? Int ?? 0
+        }
+        set {
+            defaults.set(newValue, forKey: "DrinkLimit")
+        }
+    }
+    
     // MARK: Public API
     static private let defaults = UserDefaults.standard
 }

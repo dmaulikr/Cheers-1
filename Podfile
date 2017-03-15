@@ -8,5 +8,6 @@ target 'Cheers' do
   # Pods for Cheers
     pod 'BAFluidView'
     pod 'PKHUD', '~> 4.0'
+    pod 'CircularSlider'
 
 end

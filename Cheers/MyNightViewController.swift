@@ -19,6 +19,9 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     @IBOutlet weak var currDrinkCountLabel: UILabel!
     
+    @IBOutlet weak var drinkLimitLabel: UILabel!
+    
+    
     fileprivate var bitmojis = [String]()
     
     fileprivate var currentPage: Int = 0 {
@@ -57,8 +60,7 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
         self.bacView.layer.borderWidth = 1.0
         self.bacView.layer.borderColor = UIColor.gray.cgColor
         
-        let currDrink = UserInfo.numDrinks
-        currDrinkCountLabel.text = String(currDrink)
+        setupLabelInfo()
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateDrinkCountLabel(notification:)), name: Notification.Name(rawValue: "drinkCountChange"), object: nil)
     }
@@ -67,6 +69,13 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
         let currDrink = UserInfo.numDrinks
         currDrinkCountLabel.text = String(currDrink)
         print ("drink counted")
+    }
+    
+    private func setupLabelInfo() {
+        let currDrink = UserInfo.numDrinks
+        currDrinkCountLabel.text = String(currDrink)
+        let drinkLim = UserInfo.drinkLimit
+        drinkLimitLabel.text = String(drinkLim)
     }
     
     
