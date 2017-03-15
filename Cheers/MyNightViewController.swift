@@ -56,7 +56,7 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         let popup = PopupDialog(title: title, message: message, image: nil)
         
-        let button = DefaultButton(title: "got it") {
+        let button = DefaultButton(title: "OK") {
             print("button pressed")
         }
         

@@ -73,6 +73,9 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
                 exceedLabel.isHidden = false
                 
             }
+            if (numDrinks == UserInfo.drinkLimit) {
+                limitReachedAlert()
+            }
         }
     }
     
@@ -93,7 +96,24 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
             if (numDrinks <= UserInfo.drinkLimit) {
                 exceedLabel.isHidden = true
             }
+            if (numDrinks == UserInfo.drinkLimit) {
+                limitReachedAlert()
+            }
         }
+    }
+    
+    private func limitReachedAlert() {
+        let title = "Warning"
+        let message = "You have reached your drink limit for the night."
+        
+        let popup = PopupDialog(title: title, message: message, image: nil)
+        
+        let button = DefaultButton(title: "OK") {
+            print("button pressed")
+        }
+        
+        popup.addButtons([button])
+        self.present(popup, animated: true, completion: nil)
     }
     
     private func animateDrinkCountChange() {
