@@ -30,12 +30,7 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     fileprivate var bitmojis = [String]()
     
-    fileprivate var currentPage: Int = 0 {
-        didSet {
-            let bitmoji = bitmojis[currentPage]
-            // do something here, like save it?
-        }
-    }
+    fileprivate var currentPage: Int = 0
     
     fileprivate var pageSize: CGSize {
         let layout = self.collectionView.collectionViewLayout as! UPCarouselFlowLayout
@@ -49,6 +44,8 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     @IBAction func setBitmoji(_ sender: UIButton) {
+        let selectedBitmoji = bitmojis[currentPage]
+        UserInfo.myBitmoji = selectedBitmoji
         HUD.flash(.label("Profile updated!"), delay: 0.5)
     }
     
