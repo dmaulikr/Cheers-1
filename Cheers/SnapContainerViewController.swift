@@ -103,7 +103,7 @@ class SnapContainerViewController: UIViewController, UIScrollViewDelegate {
                                     width: view.width,
                                     height: view.height
         )
-        
+
         addChildViewController(leftVc)
         addChildViewController(middleVertScrollVc)
         addChildViewController(rightVc)
@@ -122,10 +122,12 @@ class SnapContainerViewController: UIViewController, UIScrollViewDelegate {
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         self.initialContentOffset = scrollView.contentOffset
+        print(self.initialContentOffset)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if delegate != nil && !delegate!.outerScrollViewShouldScroll() && !directionLockDisabled {
+            
             let newOffset = CGPoint(x: self.initialContentOffset.x, y: self.initialContentOffset.y)
         
             // Setting the new offset to the scrollView makes it behave like a proper

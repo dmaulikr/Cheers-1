@@ -25,6 +25,12 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     @IBOutlet weak var infoButton: UIButton!
     
+    @IBAction func goDownToGroupPage(_ sender: Any) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let snapContainer = appDelegate.window?.rootViewController as! SnapContainerViewController
+        let groupViewOffset = snapContainer.middleVertScrollVc.middleVc.view.frame.origin
+        snapContainer.middleVertScrollVc.scrollView.setContentOffset(groupViewOffset, animated: false)
+    }
     
     fileprivate var bitmojis = [String]()
     
