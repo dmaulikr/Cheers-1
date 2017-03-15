@@ -78,9 +78,9 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
     
     @IBAction func swipeToMinusDrink(_ sender: UISwipeGestureRecognizer) {
         if drinkSelected {
-            level -= percentIncrement
-            fluidView?.fill(to: level as NSNumber!)
             if numDrinks > 0 {
+                level -= percentIncrement
+                fluidView?.fill(to: level as NSNumber!)
                 numDrinks -= 1
                 UserInfo.numDrinks = self.numDrinks
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "drinkCountChange"), object: nil)

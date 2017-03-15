@@ -25,6 +25,8 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     @IBOutlet weak var infoButton: UIButton!
     
+    @IBOutlet weak var bacLabel: UILabel!
+    
     
     fileprivate var bitmojis = [String]()
     
@@ -76,6 +78,7 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         setupLabelInfo()
         setupUI()
+        updateLabelUI()
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateDrinkCountLabel(notification:)), name: Notification.Name(rawValue: "drinkCountChange"), object: nil)
     }
@@ -83,7 +86,7 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
     func updateDrinkCountLabel(notification: Notification) {
         let currDrink = UserInfo.numDrinks
         currDrinkCountLabel.text = String(currDrink)
-        print ("drink counted")
+        updateLabelUI()
     }
     
     private func setupUI() {
@@ -98,10 +101,19 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     private func setupLabelInfo() {
-        let currDrink = UserInfo.numDrinks
-        currDrinkCountLabel.text = String(currDrink)
+        let currDrinkCount = UserInfo.numDrinks
+        currDrinkCountLabel.text = String(currDrinkCount)
         let drinkLim = UserInfo.drinkLimit
         drinkLimitLabel.text = String(drinkLim)
+    }
+    
+    private func updateLabelUI() {
+        let currDrinkCount = UserInfo.numDrinks
+        let bac = BacInfo.drinkToBACDict[currDrinkCount]
+        let colorHex = BacInfo.BACToColorDict[bac!]
+        bacLabel.text = bac
+        bacLabel.textColor = UIColor(hex: colorHex!)
+        currDrinkCountLabel.textColor = UIColor(hex: colorHex!)
     }
     
     
