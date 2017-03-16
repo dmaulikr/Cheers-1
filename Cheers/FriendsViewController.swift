@@ -64,8 +64,6 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
     @IBAction func bounce(_ sender: UIButton) {
         let title = "Going home now?"
         let message = "We'll notify your group"
-        // image size is fucked up
-        //let image = UIImage(named: "emily2")
         let popup = PopupDialog(title: title, message: message, image: nil)
         
         let button = DefaultButton(title: "BOUNCE") {
@@ -101,55 +99,21 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
         automaticallyAdjustsScrollViewInsets = false
         createFriends()
         
-        /*guard let collectionView = collectionView else { return }
-        collectionView.mask = GradientMaskView(frame: CGRect(origin: CGPoint.zero, size: collectionView.bounds.size))*/
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateMyImage(notification:)), name: Notification.Name(rawValue: "bitmojiProfileChange"), object: nil)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.view.layoutIfNeeded()
         
-        // mask view shit
-        /*guard let collectionView = collectionView,
-            let maskView = collectionView.mask as? GradientMaskView,
-            let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
-            else {
-                return
-        }
-        
-        /*
-         Update the mask view to have fully faded out any collection view
-         content above the navigation bar's label.
-         */
-        maskView.maskPosition.end = topLayoutGuide.length * 0.8
-        
-        /*
-         Update the position from where the collection view's content should
-         start to fade out. The size of the fade increases as the collection
-         view scrolls to a maximum of half the navigation bar's height.
-         */
-        let maximumMaskStart = maskView.maskPosition.end + (topLayoutGuide.length * 0.5)
-        let verticalScrollPosition = max(0, collectionView.contentOffset.y + collectionView.contentInset.top)
-        maskView.maskPosition.start = min(maximumMaskStart, maskView.maskPosition.end + verticalScrollPosition)
-        
-        /*
-         Position the mask view so that it is always fills the visible area of
-         the collection view.
-         */
-        var rect = CGRect(origin: CGPoint(x: 0, y: collectionView.contentOffset.y), size: collectionView.bounds.size)
-        
-        /*
-         Increase the width of the mask view so that it doesn't clip focus
-         shadows along its edge. Here we are basing the amount to increase the
-         frame by on the spacing defined in the collection view's layout.
-         */
-        rect = rect.insetBy(dx: -layout.minimumInteritemSpacing, dy: 0)
-        
-        maskView.frame = rect
-        */
-        
- 
+    }
+    
+    func updateMyImage(notification: Notification) {
+        partyPeople[2].image = UserInfo.myBitmoji
+        //let indexPath = IndexPath(item: 2, section: 0)
+        //collectionView.reloadItems(at: [indexPath])
+        //print(partyPeople[2].image)
+        self.collectionView.reloadData()
     }
 
     // Private
@@ -160,13 +124,16 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
     
     private func createFriends() {
         let coord = CLLocationCoordinate2D(latitude: 37.445158, longitude: -122.163913)
-        let minna = DrinkingBuddy(name: "minna", status: DrinkingBuddy.Status.dangerZone, title: nil, subtitle: "The Patio", coordinate: coord, phone: "6073791277", image: "minna-bitmoji")
-        let catherine = DrinkingBuddy(name: "catherine", status: DrinkingBuddy.Status.fine, title: nil, subtitle: "The Patio", coordinate: coord, phone: "9492417906", image: "cat-profile-bitmoji")
-        let me = DrinkingBuddy(name: "me", status: DrinkingBuddy.Status.fine, title: nil, subtitle: "The Patio", coordinate: coord, phone: "9492417906", image: "emily2") //emily
-        let jeremy = DrinkingBuddy(name: "jeremy", status: DrinkingBuddy.Status.fine, title: nil, subtitle: "The Patio", coordinate: coord, phone: "5038676659", image: "jeremy-profile-bitmoji")
-        let shubha = DrinkingBuddy(name: "shubha", status: DrinkingBuddy.Status.left, title: nil, subtitle: "The Patio", coordinate: coord, phone: "4085945805", image: "shubha-sleeping-bitmoji")
-        let nick = DrinkingBuddy(name: "nick", status: DrinkingBuddy.Status.left, title: nil, subtitle: "The Patio", coordinate: coord, phone: "4085945805", image: "nick-sleeping-bitmoji")
-        let raven = DrinkingBuddy(name: "raven", status: DrinkingBuddy.Status.left, title: nil, subtitle: "The Patio", coordinate: coord, phone: "4085945805", image: "raven-sleeping-bitmoji")
+        let minna = DrinkingBuddy(name: "minna", status: DrinkingBuddy.Status.dangerZone, title: nil, subtitle: "The Patio", coordinate: coord, phone: "6073791277", image: "minna-bitmoji", count: 7, limit: 6)
+        let catherine = DrinkingBuddy(name: "catherine", status: DrinkingBuddy.Status.fine, title: nil, subtitle: "The Patio", coordinate: coord, phone: "9492417906", image: "cat-profile-bitmoji", count: 4, limit: 7)
+        let me = DrinkingBuddy(name: "me", status: DrinkingBuddy.Status.fine, title: nil, subtitle: "The Patio", coordinate: coord, phone: "9492417906", image: "emily2", count: UserInfo.numDrinks, limit: UserInfo.drinkLimit) //emily
+        print("em info")
+        print(UserInfo.numDrinks)
+        print(UserInfo.drinkLimit)
+        let jeremy = DrinkingBuddy(name: "jeremy", status: DrinkingBuddy.Status.fine, title: nil, subtitle: "The Patio", coordinate: coord, phone: "5038676659", image: "jeremy-profile-bitmoji", count: 0, limit: 0)
+        let shubha = DrinkingBuddy(name: "shubha", status: DrinkingBuddy.Status.left, title: nil, subtitle: "The Patio", coordinate: coord, phone: "4085945805", image: "shubha-sleeping-bitmoji", count: 1, limit: 4)
+        let nick = DrinkingBuddy(name: "nick", status: DrinkingBuddy.Status.left, title: nil, subtitle: "The Patio", coordinate: coord, phone: "4085945805", image: "nick-sleeping-bitmoji", count: 3, limit: 8)
+        let raven = DrinkingBuddy(name: "raven", status: DrinkingBuddy.Status.left, title: nil, subtitle: "The Patio", coordinate: coord, phone: "4085945805", image: "raven-sleeping-bitmoji", count: 2, limit: 5)
         partyPeople = [minna, catherine, me, jeremy, shubha, nick, raven]
     }
     
@@ -194,9 +161,6 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
         
         let index = indexPath.item - 1 //offset the first cell
         
-        // to make opaque
-        //cell.alpha = 0.4
-        
         let buddy = partyPeople[index]
         if buddy.status == DrinkingBuddy.Status.dangerZone {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DrunkFriendCell", for: indexPath) as! DrunkFriendCollectionViewCell
@@ -210,6 +174,10 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
             cell.backgroundColor = UIColor.white
             cell.name = buddy.name
             cell.friend = buddy
+            
+            if buddy.status == DrinkingBuddy.Status.left {
+                cell.alpha = 0.4
+            }
             return cell
         }
     }

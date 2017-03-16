@@ -13,7 +13,7 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
 
 // MARK: - Outlets
 
-@IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
 
 @IBOutlet weak var bacView: UIView!
 
@@ -53,6 +53,7 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
         let selectedBitmoji = bitmojis[currentPage]
         UserInfo.myBitmoji = selectedBitmoji
         HUD.flash(.label("Profile updated!"), delay: 0.5)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "bitmojiProfileChange"), object: nil)
     }
     
     
@@ -128,7 +129,7 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     private func createBitmojis() {
-        self.bitmojis = ["emily1", "emily2", "wine-main", "cocktail-main", "shot-main"]
+        self.bitmojis = ["carousel-bitmoji-beer", "carousel-bitmoji-danceparty", "carousel-bitmoji-sad", "carousel-bitmoji-sleepy", "carousel-bitmoji-wasted", "carousel-bitmoji-yes"]
     }
     
     
@@ -146,11 +147,12 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BitmojiCell", for: indexPath) as! CarouselCollectionViewCell
         let bitmoji = bitmojis[indexPath.item]
         cell.image = UIImage(named: bitmoji)
+        cell.layer.borderWidth = 0.0
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let heightPerItem = self.view.frame.height
+        let heightPerItem = self.collectionView.frame.height
         return CGSize(width: heightPerItem, height: heightPerItem)
     }
     

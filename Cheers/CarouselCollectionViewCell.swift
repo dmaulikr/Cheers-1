@@ -13,7 +13,6 @@ class CarouselCollectionViewCell: UICollectionViewCell {
     // MARK: - Outlets
     @IBOutlet weak var imageView: UIImageView!
     
-    
     // MARK: - Properties
     var image: UIImage? {
         didSet {

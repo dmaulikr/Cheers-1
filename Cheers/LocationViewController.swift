@@ -25,6 +25,8 @@ class LocationViewController: UIViewController {
     let regionRadius: CLLocationDistance = 1000
     let initialLocation = CLLocation(latitude: 37.445158, longitude: -122.163913)
     
+    //let noLocation = CLLocationCoordinate2D()
+    var viewRegion: MKCoordinateRegion?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,12 +52,13 @@ class LocationViewController: UIViewController {
     
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius, regionRadius)
+        self.viewRegion = coordinateRegion
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
     func addAnnotations() {
         let coord = CLLocationCoordinate2D(latitude: 37.445158, longitude: -122.163913)
-        let emily = DrinkingBuddy(name: "Emily", status: DrinkingBuddy.Status.dangerZone, title: nil, subtitle: "The Patio", coordinate: coord, phone: "4085945805", image: "em-bitmoji-shadow")
+        let emily = DrinkingBuddy(name: "me", status: DrinkingBuddy.Status.dangerZone, title: nil, subtitle: "The Patio", coordinate: coord, phone: "4085945805", image: "em-bitmoji-shadow", count: UserInfo.numDrinks, limit: UserInfo.drinkLimit)
         
         mapView?.delegate = self
         mapView?.addAnnotations([emily])
@@ -84,15 +87,8 @@ extension LocationViewController: MKMapViewDelegate {
             
             // will need to fix this
             
-            let pinImage = UIImage(named: "emily1")
-            let aspectRatio = pinImage!.size.width / pinImage!.size.height
-            let aspectHeight = 50.0 / aspectRatio
-            let size = CGSize(width: 50, height: aspectHeight)
-            UIGraphicsBeginImageContext(size)
-            pinImage?.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
-            let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
-            annotationView.image = resizedImage
+            let pinImage = UIImage(named: "emily-pin")
+            annotationView.image = pinImage
             return annotationView
         }
     }

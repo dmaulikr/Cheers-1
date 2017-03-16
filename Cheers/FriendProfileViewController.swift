@@ -26,10 +26,19 @@ class FriendProfileViewController: UIViewController, MFMessageComposeViewControl
     @IBOutlet weak var profileImage: UIImageView!
     
     @IBOutlet weak var bacView: UIView!
+    
+    
+    @IBOutlet weak var bacLabel: UILabel!
 
+    @IBOutlet weak var effectLabel: UILabel!
+    
+    @IBOutlet weak var currentDrinkCountLabel: UILabel!
+    
+    @IBOutlet weak var limitLabel: UILabel!
+    
+    
     
     @IBAction func dismissProfile(_ sender: UIButton) {
-        
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -56,6 +65,15 @@ class FriendProfileViewController: UIViewController, MFMessageComposeViewControl
         UIApplication.shared.open(no, options: [:], completionHandler: nil)
     }
     
+    
+    @IBAction func locateFriend(_ sender: UIButton) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let snapContainer = appDelegate.window?.rootViewController as! SnapContainerViewController
+        let mapViewOffset = snapContainer.rightVc.view.frame.origin
+        snapContainer.scrollView.setContentOffset(mapViewOffset, animated: true)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         populateFriend()
@@ -72,6 +90,28 @@ class FriendProfileViewController: UIViewController, MFMessageComposeViewControl
         self.bacView.clipsToBounds = true
         self.bacView.layer.borderWidth = 1.0
         self.bacView.layer.borderColor = UIColor.gray.cgColor
+        
+        var numDrinks = 0
+        var drinkLimit = 0
+        if (friend?.name == "me") {
+            numDrinks = UserInfo.numDrinks
+            drinkLimit = UserInfo.drinkLimit
+        } else {
+            numDrinks = (friend?.count)!
+            drinkLimit = (friend?.limit)!
+        }
+        
+        let bac = BacInfo.drinkToBACDict[numDrinks]
+        let colorHex = BacInfo.BACToColorDict[bac!]
+        let effect = BacInfo.BACToEffectDict[bac!]
+        
+        currentDrinkCountLabel.text = "\(numDrinks)"
+        currentDrinkCountLabel.textColor = UIColor(hex: colorHex!)
+        bacLabel.text = bac!
+        bacLabel.textColor = UIColor(hex: colorHex!)
+        effectLabel.text = effect!
+        effectLabel.textColor = UIColor(hex: colorHex!)
+        limitLabel.text = "\(drinkLimit)"
     }
     
     

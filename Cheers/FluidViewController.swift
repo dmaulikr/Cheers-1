@@ -87,8 +87,6 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
                 drinksInLabel.textColor = UIColor.white
             } else if (numDrinks > UserInfo.drinkLimit) {
                 exceedLabel.isHidden = false
-                drinkLabel.textColor = UIColor.white
-                drinksInLabel.textColor = UIColor.white
             }
         }
     }

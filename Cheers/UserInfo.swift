@@ -31,7 +31,7 @@ struct UserInfo {
     
     static var myBitmoji: String {
         get {
-            return defaults.object(forKey: "MyBitmoji") as? String ?? "emily2" //replace this with default
+            return defaults.object(forKey: "MyBitmoji") as? String ?? "carousel-bitmoji-beer" //replace this with default
         }
         set {
             defaults.set(newValue, forKey: "MyBitmoji")
