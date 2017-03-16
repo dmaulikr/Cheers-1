@@ -19,7 +19,7 @@ struct BacInfo {
         6:"0.19",
         7:"0.23",
         8:"0.27",
-        9:"0.3",
+        9:"0.30",
         10:"0.33"
     ]
     
@@ -33,7 +33,7 @@ struct BacInfo {
     "0.19":"CC0F0F",
     "0.23":"CC0F0F",
     "0.27":"CC0F0F",
-    "0.3":"CC0F0F",
+    "0.30":"CC0F0F",
     "0.33":"CC0F0F"
     ]
     
@@ -47,7 +47,7 @@ struct BacInfo {
     "0.19":"WASTED",
     "0.23":"WASTED",
     "0.27":"BLACKOUT",
-    "0.3":"BLACKOUT",
+    "0.30":"BLACKOUT",
     "0.33":"UNCONSCIOUS"
     ]
     

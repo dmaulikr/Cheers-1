@@ -12,6 +12,9 @@ class DrunkFriendCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var friendName: UILabel!
     @IBOutlet weak var friendImage: UIImageView!
     
+    @IBOutlet weak var exceededLabel: UILabel!
+    
+    
     // MARK: - Properties
     var name: String? {
         didSet {
@@ -22,6 +25,12 @@ class DrunkFriendCollectionViewCell: UICollectionViewCell {
     var friend: DrinkingBuddy? {
         didSet {
             friendImage.image = UIImage(named: (friend?.image)!)
+            updateUI()
         }
+    }
+    
+    private func updateUI() {
+        print ("update ui")
+        exceededLabel.layer.cornerRadius = 20
     }
 }
