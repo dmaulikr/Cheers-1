@@ -71,7 +71,7 @@ class PersonalizeViewController: UIViewController {
     }
     
     private func saveDrinkLimit() {
-        self.drinkLimit = Int(self.circularSlider.value)
+        self.drinkLimit = Int(ceil(self.circularSlider.value))
         UserInfo.drinkLimit = self.drinkLimit
     }
     
