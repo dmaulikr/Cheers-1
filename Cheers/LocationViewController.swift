@@ -84,15 +84,8 @@ extension LocationViewController: MKMapViewDelegate {
             
             // will need to fix this
             
-            let pinImage = UIImage(named: "emily1")
-            let aspectRatio = pinImage!.size.width / pinImage!.size.height
-            let aspectHeight = 50.0 / aspectRatio
-            let size = CGSize(width: 50, height: aspectHeight)
-            UIGraphicsBeginImageContext(size)
-            pinImage?.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
-            let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
-            annotationView.image = resizedImage
+            let pinImage = UIImage(named: "emily-pin")
+            annotationView.image = pinImage
             return annotationView
         }
     }
