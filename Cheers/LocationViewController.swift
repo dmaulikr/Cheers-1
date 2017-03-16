@@ -22,8 +22,10 @@ class LocationViewController: UIViewController {
     
     // Properties
     let locationManager = CLLocationManager()
-    let regionRadius: CLLocationDistance = 1000
-    let initialLocation = CLLocation(latitude: 37.445158, longitude: -122.163913)
+    let regionRadius: CLLocationDistance = 500
+    let initialLocation = CLLocation(latitude: 37.789819, longitude: -122.420716)
+    
+    let friends = DrinkingBuddy.getFriends()
     
     //let noLocation = CLLocationCoordinate2D()
     var viewRegion: MKCoordinateRegion?
@@ -57,11 +59,8 @@ class LocationViewController: UIViewController {
     }
     
     func addAnnotations() {
-        let coord = CLLocationCoordinate2D(latitude: 37.445158, longitude: -122.163913)
-        let emily = DrinkingBuddy(name: "me", status: DrinkingBuddy.Status.dangerZone, title: nil, subtitle: "The Patio", coordinate: coord, phone: "4085945805", image: "em-bitmoji-shadow", count: UserInfo.numDrinks, limit: UserInfo.drinkLimit)
-        
         mapView?.delegate = self
-        mapView?.addAnnotations([emily])
+        mapView?.addAnnotations(friends)
     }
 
 
@@ -86,8 +85,15 @@ extension LocationViewController: MKMapViewDelegate {
             annotationView.canShowCallout = true
             
             // will need to fix this
-            
-            let pinImage = UIImage(named: "emily-pin")
+            let name = (annotation.title!)!
+            var pinImage: UIImage?
+            if (name == "shubha" || name == "nick" || name == "raven") {
+                pinImage = UIImage(named: "me-pin")
+            } else {
+                let pinName = name + "-pin"
+                pinImage = UIImage(named: pinName)
+
+            }
             annotationView.image = pinImage
             return annotationView
         }

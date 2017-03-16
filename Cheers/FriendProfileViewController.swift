@@ -27,7 +27,6 @@ class FriendProfileViewController: UIViewController, MFMessageComposeViewControl
     
     @IBOutlet weak var bacView: UIView!
     
-    
     @IBOutlet weak var bacLabel: UILabel!
 
     @IBOutlet weak var effectLabel: UILabel!
@@ -36,6 +35,7 @@ class FriendProfileViewController: UIViewController, MFMessageComposeViewControl
     
     @IBOutlet weak var limitLabel: UILabel!
     
+    @IBOutlet weak var buttonsView: UIView!
     
     
     @IBAction func dismissProfile(_ sender: UIButton) {
@@ -78,6 +78,10 @@ class FriendProfileViewController: UIViewController, MFMessageComposeViewControl
         super.viewDidLoad()
         populateFriend()
         setupUI()
+        
+        if (friend?.name == "me") {
+            buttonsView.isHidden = true
+        }
     }
     
     func populateFriend() {

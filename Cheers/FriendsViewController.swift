@@ -97,7 +97,9 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
         automaticallyAdjustsScrollViewInsets = false
-        createFriends()
+        //createFriends()
+        
+        partyPeople = DrinkingBuddy.getFriends()
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateMyImage(notification:)), name: Notification.Name(rawValue: "bitmojiProfileChange"), object: nil)
     }
@@ -119,22 +121,6 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
     // Private
     private struct Constants {
         static let sectionInsets = UIEdgeInsetsMake(1.0, 1.0, 1.0, 1.0)
-    }
-    
-    
-    private func createFriends() {
-        let coord = CLLocationCoordinate2D(latitude: 37.445158, longitude: -122.163913)
-        let minna = DrinkingBuddy(name: "minna", status: DrinkingBuddy.Status.dangerZone, title: nil, subtitle: "The Patio", coordinate: coord, phone: "6073791277", image: "minna-bitmoji", count: 7, limit: 6)
-        let catherine = DrinkingBuddy(name: "catherine", status: DrinkingBuddy.Status.fine, title: nil, subtitle: "The Patio", coordinate: coord, phone: "9492417906", image: "cat-profile-bitmoji", count: 4, limit: 7)
-        let me = DrinkingBuddy(name: "me", status: DrinkingBuddy.Status.fine, title: nil, subtitle: "The Patio", coordinate: coord, phone: "9492417906", image: "emily2", count: UserInfo.numDrinks, limit: UserInfo.drinkLimit) //emily
-        print("em info")
-        print(UserInfo.numDrinks)
-        print(UserInfo.drinkLimit)
-        let jeremy = DrinkingBuddy(name: "jeremy", status: DrinkingBuddy.Status.fine, title: nil, subtitle: "The Patio", coordinate: coord, phone: "5038676659", image: "jeremy-profile-bitmoji", count: 0, limit: 0)
-        let shubha = DrinkingBuddy(name: "shubha", status: DrinkingBuddy.Status.left, title: nil, subtitle: "The Patio", coordinate: coord, phone: "4085945805", image: "shubha-sleeping-bitmoji", count: 1, limit: 4)
-        let nick = DrinkingBuddy(name: "nick", status: DrinkingBuddy.Status.left, title: nil, subtitle: "The Patio", coordinate: coord, phone: "4085945805", image: "nick-sleeping-bitmoji", count: 3, limit: 8)
-        let raven = DrinkingBuddy(name: "raven", status: DrinkingBuddy.Status.left, title: nil, subtitle: "The Patio", coordinate: coord, phone: "4085945805", image: "raven-sleeping-bitmoji", count: 2, limit: 5)
-        partyPeople = [minna, catherine, me, jeremy, shubha, nick, raven]
     }
     
     // MARK: - UIScrollViewDelegate
