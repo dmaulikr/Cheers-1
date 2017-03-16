@@ -122,7 +122,6 @@ class SnapContainerViewController: UIViewController, UIScrollViewDelegate {
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         self.initialContentOffset = scrollView.contentOffset
-        print(self.initialContentOffset)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

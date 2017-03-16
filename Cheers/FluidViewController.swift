@@ -56,9 +56,11 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
         if (UserInfo.drinkLimit == 0) {
             percentIncrement = 1.0
         } else {
-            percentIncrement = 1.0 / Double(UserInfo.drinkLimit)
+            percentIncrement = 0.9 / Double(UserInfo.drinkLimit)
         }
-        
+
+        drinkLabel.textColor = UIColor(hex: "4E4E4E")
+        drinksInLabel.textColor = UIColor(hex: "4E4E4E")
         exceedLabel.isHidden = true
     }
     
@@ -75,13 +77,18 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
             drinksInLabel.text = (numDrinks == 1) ? "drink in" : "drinks in"
         
             animateDrinkCountChange()
-            
-            if (numDrinks > UserInfo.drinkLimit) {
+            if (UserInfo.drinkLimit == 0) {
+                limitReachedAlert(soberLimit: true)
+                drinkLabel.textColor = UIColor.white
+                drinksInLabel.textColor = UIColor.white
+            } else if (numDrinks == UserInfo.drinkLimit) {
+                limitReachedAlert(soberLimit: false)
+                drinkLabel.textColor = UIColor.white
+                drinksInLabel.textColor = UIColor.white
+            } else if (numDrinks > UserInfo.drinkLimit) {
                 exceedLabel.isHidden = false
-                
-            }
-            if (numDrinks == UserInfo.drinkLimit) {
-                limitReachedAlert()
+                drinkLabel.textColor = UIColor.white
+                drinksInLabel.textColor = UIColor.white
             }
         }
     }
@@ -102,16 +109,15 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
             
             if (numDrinks <= UserInfo.drinkLimit) {
                 exceedLabel.isHidden = true
-            }
-            if (numDrinks == UserInfo.drinkLimit) {
-                limitReachedAlert()
+                drinkLabel.textColor = UIColor(hex: "4E4E4E")
+                drinksInLabel.textColor = UIColor(hex: "4E4E4E")
             }
         }
     }
     
-    private func limitReachedAlert() {
+    private func limitReachedAlert(soberLimit: Bool) {
         let title = "Warning"
-        let message = "You have reached your drink limit for the night."
+        let message = soberLimit ? "You have exceeded your drink limit for the night." : "You have reached your drink limit for the night."
         
         let popup = PopupDialog(title: title, message: message, image: nil)
         
@@ -138,10 +144,10 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
     }
     
     func configureButtons() {
-        cupButton = DCPathButton(center: UIImage(named: "cup"), highlightedImage: UIImage(named: "cup"))
+        cupButton = DCPathButton(center: UIImage(named: "plus"), highlightedImage: UIImage(named: "plus"))
         
         cupButton.delegate = self
-        cupButton.dcButtonCenter = CGPoint(x: self.view.bounds.width/2, y: self.view.bounds.height - 50)
+        cupButton.dcButtonCenter = CGPoint(x: self.view.bounds.width/2, y: self.view.bounds.height - 70)
         cupButton.allowSounds = false
         cupButton.allowCenterButtonRotation = true
         cupButton.bloomRadius = 105
