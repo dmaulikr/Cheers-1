@@ -23,7 +23,27 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
     
     @IBOutlet weak var bounceButton: UIButton!
     
+    @IBAction func goToManualTracker(_ sender: Any) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let snapContainer = appDelegate.window?.rootViewController as! SnapContainerViewController
+        let manualTrackerViewOffset = snapContainer.leftVc.view.frame.origin
+        snapContainer.scrollView.setContentOffset(manualTrackerViewOffset, animated: true)
+    }
     
+    @IBAction func goToMap(_ sender: Any) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let snapContainer = appDelegate.window?.rootViewController as! SnapContainerViewController
+        let mapViewOffset = snapContainer.rightVc.view.frame.origin
+        snapContainer.scrollView.setContentOffset(mapViewOffset, animated: true)
+    }
+
+    @IBAction func gotToMyProfile(_ sender: Any) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let snapContainer = appDelegate.window?.rootViewController as! SnapContainerViewController
+        let myProfileViewOffset = snapContainer.middleVertScrollVc.topVc.view.frame.origin
+        snapContainer.middleVertScrollVc.scrollView.setContentOffset(myProfileViewOffset, animated: true)
+    }
+
     @IBAction func messageGroup(_ sender: UIButton) {
         if MFMessageComposeViewController.canSendText(){
             let msg:MFMessageComposeViewController=MFMessageComposeViewController()

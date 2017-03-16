@@ -21,6 +21,13 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
     
     @IBOutlet weak var drinksInLabel: UILabel!
     
+    @IBAction func goToGroupPage(_ sender: Any) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let snapContainer = appDelegate.window?.rootViewController as! SnapContainerViewController
+        let groupViewOffset = snapContainer.middleVertScrollVc.view.frame.origin
+        snapContainer.scrollView.setContentOffset(groupViewOffset, animated: true)
+    }
+    
     @IBOutlet weak var exceedLabel: UILabel!
     
     

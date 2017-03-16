@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="esZ-gP-4Ic">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="esZ-gP-4Ic">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -317,6 +317,9 @@
                                 <rect key="frame" x="167" y="601" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="drink"/>
+                                <connections>
+                                    <action selector="goDownToGroupPage:" destination="jzp-7B-bmv" eventType="touchUpInside" id="52t-xF-eEh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -642,8 +645,25 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MtD-aF-Ibv">
-                        <barButtonItem key="leftBarButtonItem" image="drink" id="rIl-FK-78b"/>
-                        <barButtonItem key="rightBarButtonItem" image="pin" id="9iJ-4K-80F"/>
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" image="drink" id="rIl-FK-78b">
+                            <connections>
+                                <action selector="goToManualTracker:" destination="mx0-iY-FJv" id="Xmw-wx-x9Q"/>
+                            </connections>
+                        </barButtonItem>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AMf-hO-bWG">
+                            <rect key="frame" x="113" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="gotToMyProfile:" destination="mx0-iY-FJv" eventType="touchUpInside" id="Z1n-wg-zZo"/>
+                            </connections>
+                        </button>
+                        <barButtonItem key="rightBarButtonItem" image="pin" id="9iJ-4K-80F">
+                            <connections>
+                                <action selector="goToMap:" destination="mx0-iY-FJv" id="126-2v-Lb4"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="bounceButton" destination="yRy-U2-hIh" id="Wjj-Ju-pAg"/>
@@ -675,7 +695,11 @@
                         <color key="backgroundColor" red="0.83195324300266793" green="0.99934172862822279" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="zAe-mU-gVL">
-                        <barButtonItem key="leftBarButtonItem" image="dancing" id="Lcd-4o-7go"/>
+                        <barButtonItem key="leftBarButtonItem" image="dancing" id="Lcd-4o-7go">
+                            <connections>
+                                <action selector="goToGroupPage:" destination="KdD-MW-5Pe" id="JnV-bb-P3K"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="ijr-dY-FT8" id="0m5-8U-6oz"/>
@@ -727,7 +751,11 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="pve-io-isa">
-                        <barButtonItem key="rightBarButtonItem" image="dancing" id="8R1-ED-c35"/>
+                        <barButtonItem key="rightBarButtonItem" image="dancing" id="8R1-ED-c35">
+                            <connections>
+                                <action selector="goToGroupPage:" destination="ZKQ-4G-FoJ" id="7xx-aO-ymF"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="drinkLabel" destination="z0U-4k-xMg" id="VUR-bY-uQi"/>

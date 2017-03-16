@@ -37,7 +37,6 @@
 		9DD0DCB71E7270BE005D2F74 /* Cheers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0DCB51E7270BE005D2F74 /* Cheers.xcdatamodeld */; };
 		9DD0DCB91E7270BE005D2F74 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0DCB81E7270BE005D2F74 /* Icons.xcassets */; };
 		9DD0DCBC1E7270BE005D2F74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0DCBA1E7270BE005D2F74 /* LaunchScreen.storyboard */; };
-		9DD0DCC51E727812005D2F74 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0DCC41E727812005D2F74 /* FriendsViewController.swift */; };
 		9DD0DCC81E727831005D2F74 /* SnapContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0DCC61E727831005D2F74 /* SnapContainerViewController.swift */; };
 		9DD0DCC91E727831005D2F74 /* VerticalScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0DCC71E727831005D2F74 /* VerticalScrollViewController.swift */; };
 		9DD0DCCC1E727E68005D2F74 /* DrinkingBuddy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0DCCB1E727E68005D2F74 /* DrinkingBuddy.swift */; };
@@ -66,6 +65,7 @@
 		9DDE35C51E794584009BA3E6 /* UIImageView+Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE35AF1E794584009BA3E6 /* UIImageView+Calculations.swift */; };
 		9DDE35C61E794584009BA3E6 /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE35B01E794584009BA3E6 /* UIView+Animations.swift */; };
 		9DDE35C71E794584009BA3E6 /* UIViewController+Visibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE35B11E794584009BA3E6 /* UIViewController+Visibility.swift */; };
+		C14741751E79E990000BE93C /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14741741E79E990000BE93C /* FriendsViewController.swift */; };
 		C1793A591E766EE800887B0C /* DCPathButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C1793A561E766EE800887B0C /* DCPathButton.m */; };
 		C1793A5A1E766EE800887B0C /* DCPathItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C1793A581E766EE800887B0C /* DCPathItemButton.m */; };
 /* End PBXBuildFile section */
@@ -106,7 +106,6 @@
 		9DD0DCB81E7270BE005D2F74 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		9DD0DCBB1E7270BE005D2F74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DD0DCBD1E7270BE005D2F74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9DD0DCC41E727812005D2F74 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		9DD0DCC61E727831005D2F74 /* SnapContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapContainerViewController.swift; sourceTree = "<group>"; };
 		9DD0DCC71E727831005D2F74 /* VerticalScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalScrollViewController.swift; sourceTree = "<group>"; };
 		9DD0DCCB1E727E68005D2F74 /* DrinkingBuddy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkingBuddy.swift; sourceTree = "<group>"; };
@@ -137,6 +136,7 @@
 		9DDE35B01E794584009BA3E6 /* UIView+Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Animations.swift"; sourceTree = "<group>"; };
 		9DDE35B11E794584009BA3E6 /* UIViewController+Visibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Visibility.swift"; sourceTree = "<group>"; };
 		B52B2CBEAFF6980F4C4B2420 /* Pods_Cheers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cheers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C14741741E79E990000BE93C /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		C1793A551E766EE800887B0C /* DCPathButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPathButton.h; sourceTree = "<group>"; };
 		C1793A561E766EE800887B0C /* DCPathButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPathButton.m; sourceTree = "<group>"; };
 		C1793A571E766EE800887B0C /* DCPathItemButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPathItemButton.h; sourceTree = "<group>"; };
@@ -236,8 +236,8 @@
 			isa = PBXGroup;
 			children = (
 				9DD0DCCD1E729734005D2F74 /* FriendCollectionViewCell.swift */,
+				C14741741E79E990000BE93C /* FriendsViewController.swift */,
 				9DD0DCCF1E729742005D2F74 /* DrunkFriendCollectionViewCell.swift */,
-				9DD0DCC41E727812005D2F74 /* FriendsViewController.swift */,
 				9DC225361E7377CE0001DDFA /* GradientMaskView.swift */,
 			);
 			name = "Friend Collection";
@@ -524,7 +524,6 @@
 				9DDE35B91E794584009BA3E6 /* PopupDialogDefaultButtons.swift in Sources */,
 				9DDE35B51E794584009BA3E6 /* PopupDialog+Keyboard.swift in Sources */,
 				9DD0DCCE1E729734005D2F74 /* FriendCollectionViewCell.swift in Sources */,
-				9DD0DCC51E727812005D2F74 /* FriendsViewController.swift in Sources */,
 				9D6D9AF51E77BDDC008B106A /* UPCarouselFlowLayout.swift in Sources */,
 				9DDE35C41E794584009BA3E6 /* TZStackViewDistribution.swift in Sources */,
 				9D6D9AE41E778852008B106A /* PersonalizeViewController.swift in Sources */,
@@ -544,6 +543,7 @@
 				9D369DF71E73E5E200E9B183 /* FluidViewController.swift in Sources */,
 				9DD0DCD21E72A016005D2F74 /* LocationViewController.swift in Sources */,
 				9DD0DCC81E727831005D2F74 /* SnapContainerViewController.swift in Sources */,
+				C14741751E79E990000BE93C /* FriendsViewController.swift in Sources */,
 				9DBDD0491E77DECC0057756E /* FriendProfileViewController.swift in Sources */,
 				9DD0DCCC1E727E68005D2F74 /* DrinkingBuddy.swift in Sources */,
 				9DDE35C11E794584009BA3E6 /* TZSpacerView.swift in Sources */,

@@ -13,6 +13,12 @@ class LocationViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBAction func goToGroupPage(_ sender: Any) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let snapContainer = appDelegate.window?.rootViewController as! SnapContainerViewController
+        let groupViewOffset = snapContainer.middleVertScrollVc.view.frame.origin
+        snapContainer.scrollView.setContentOffset(groupViewOffset, animated: true)
+    }
     
     // Properties
     let locationManager = CLLocationManager()
