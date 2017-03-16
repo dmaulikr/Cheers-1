@@ -25,6 +25,8 @@ class LocationViewController: UIViewController {
     let regionRadius: CLLocationDistance = 1000
     let initialLocation = CLLocation(latitude: 37.445158, longitude: -122.163913)
     
+    let friends = DrinkingBuddy.getFriends()
+    
     //let noLocation = CLLocationCoordinate2D()
     var viewRegion: MKCoordinateRegion?
     
