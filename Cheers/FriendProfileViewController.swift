@@ -37,6 +37,10 @@ class FriendProfileViewController: UIViewController, MFMessageComposeViewControl
     
     @IBOutlet weak var buttonsView: UIView!
     
+    @IBOutlet weak var bouncedLabel: UILabel!
+    
+    
+    @IBOutlet weak var currBacLabel: UILabel!
     
     @IBAction func dismissProfile(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
@@ -81,6 +85,11 @@ class FriendProfileViewController: UIViewController, MFMessageComposeViewControl
         
         if (friend?.name == "me") {
             buttonsView.isHidden = true
+        }
+        bouncedLabel.isHidden = true
+        if (friend?.status == DrinkingBuddy.Status.left) {
+            bouncedLabel.isHidden = false
+            currBacLabel.text = "Previous BAC"
         }
     }
     

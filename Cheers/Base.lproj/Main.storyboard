@@ -13,6 +13,9 @@
         <array key="Lato-Bold.ttf">
             <string>Lato-Bold</string>
         </array>
+        <array key="Lato-Hairline.ttf">
+            <string>Lato-Hairline</string>
+        </array>
         <array key="Lato-Light.ttf">
             <string>Lato-Light</string>
         </array>
@@ -472,14 +475,23 @@
                                     <action selector="dismissProfile:" destination="xlJ-nK-Bjs" eventType="touchUpInside" id="L2r-tv-PO8"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(bounced)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RxS-t9-qIX">
+                                <rect key="frame" x="127" y="28" width="120" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Lato-Hairline" family="Lato" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="bacLabel" destination="wEd-C3-qiy" id="4QY-9U-UnE"/>
                         <outlet property="bacView" destination="M8p-9t-mis" id="1kp-AV-WJQ"/>
+                        <outlet property="bouncedLabel" destination="RxS-t9-qIX" id="atv-rm-sEu"/>
                         <outlet property="buttonsView" destination="juP-Kg-hVZ" id="c9Q-b3-sWB"/>
                         <outlet property="callButton" destination="kXi-rB-kq6" id="Xes-y0-Dlg"/>
+                        <outlet property="currBacLabel" destination="ity-LM-Vlh" id="1sF-CQ-QOe"/>
                         <outlet property="currentDrinkCountLabel" destination="Lm8-Vd-FVc" id="Uz1-MH-jh0"/>
                         <outlet property="dismissButton" destination="yhQ-5N-Lsi" id="OR0-M8-ZCV"/>
                         <outlet property="effectLabel" destination="Wg9-py-ftl" id="Y5g-dy-64c"/>
@@ -807,7 +819,7 @@
             <objects>
                 <navigationController storyboardIdentifier="middle" automaticallyAdjustsScrollViewInsets="NO" id="sCI-NC-dvQ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="o0t-oH-jXs">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="o0t-oH-jXs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -825,7 +837,7 @@
             <objects>
                 <navigationController storyboardIdentifier="left" automaticallyAdjustsScrollViewInsets="NO" id="C9o-q2-fFP" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7yk-ed-tcl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="7yk-ed-tcl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -843,7 +855,7 @@
             <objects>
                 <navigationController storyboardIdentifier="right" automaticallyAdjustsScrollViewInsets="NO" id="BtV-Xl-Pzl" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="A2x-YH-Pfp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="A2x-YH-Pfp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -861,7 +873,7 @@
             <objects>
                 <navigationController storyboardIdentifier="top" automaticallyAdjustsScrollViewInsets="NO" id="CyX-UH-uTj" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xjq-Hc-TwU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Xjq-Hc-TwU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

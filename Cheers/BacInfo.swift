@@ -39,8 +39,8 @@ struct BacInfo {
     
     static var BACToEffectDict: Dictionary<String, String> = [
     "0.00":"SOBER",
-    "0.04":"TIPSY",
-    "0.07":"BUZZED",
+    "0.04":"BUZZED",
+    "0.07":"TIPSY",
     "0.10":"LEGALLY DRUNK",
     "0.13":"SLOPPY DRUNK",
     "0.16":"SLOPPY DRUNK",
