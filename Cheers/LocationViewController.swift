@@ -25,6 +25,8 @@ class LocationViewController: UIViewController {
     let regionRadius: CLLocationDistance = 1000
     let initialLocation = CLLocation(latitude: 37.445158, longitude: -122.163913)
     
+    //let noLocation = CLLocationCoordinate2D()
+    var viewRegion: MKCoordinateRegion?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +52,7 @@ class LocationViewController: UIViewController {
     
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius, regionRadius)
+        self.viewRegion = coordinateRegion
         mapView.setRegion(coordinateRegion, animated: true)
     }
     

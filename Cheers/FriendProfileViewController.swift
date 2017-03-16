@@ -39,7 +39,6 @@ class FriendProfileViewController: UIViewController, MFMessageComposeViewControl
     
     
     @IBAction func dismissProfile(_ sender: UIButton) {
-        
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -64,6 +63,15 @@ class FriendProfileViewController: UIViewController, MFMessageComposeViewControl
         guard let no = URL(string: "telprompt://" + number) else { return }
         
         UIApplication.shared.open(no, options: [:], completionHandler: nil)
+    }
+    
+    
+    @IBAction func locateFriend(_ sender: UIButton) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let snapContainer = appDelegate.window?.rootViewController as! SnapContainerViewController
+        let mapViewOffset = snapContainer.rightVc.view.frame.origin
+        snapContainer.scrollView.setContentOffset(mapViewOffset, animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
