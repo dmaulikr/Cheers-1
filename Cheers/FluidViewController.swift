@@ -78,10 +78,11 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
             
             if (numDrinks > UserInfo.drinkLimit) {
                 exceedLabel.isHidden = false
-                
             }
             if (numDrinks == UserInfo.drinkLimit) {
                 limitReachedAlert()
+                drinkLabel.textColor = UIColor.white
+                drinksInLabel.textColor = UIColor.white
             }
         }
     }
@@ -103,8 +104,9 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
             if (numDrinks <= UserInfo.drinkLimit) {
                 exceedLabel.isHidden = true
             }
-            if (numDrinks == UserInfo.drinkLimit) {
-                limitReachedAlert()
+            if (numDrinks < UserInfo.drinkLimit) {
+                drinkLabel.textColor = UIColor.black
+                drinksInLabel.textColor = UIColor.black
             }
         }
     }

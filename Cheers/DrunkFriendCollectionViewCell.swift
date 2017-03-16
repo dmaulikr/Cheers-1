@@ -25,12 +25,6 @@ class DrunkFriendCollectionViewCell: UICollectionViewCell {
     var friend: DrinkingBuddy? {
         didSet {
             friendImage.image = UIImage(named: (friend?.image)!)
-            updateUI()
         }
-    }
-    
-    private func updateUI() {
-        print ("update ui")
-        exceededLabel.layer.cornerRadius = 20
     }
 }

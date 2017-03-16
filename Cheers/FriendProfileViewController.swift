@@ -34,6 +34,7 @@ class FriendProfileViewController: UIViewController, MFMessageComposeViewControl
     
     @IBOutlet weak var currentDrinkCountLabel: UILabel!
     
+    @IBOutlet weak var limitLabel: UILabel!
     
     
     
@@ -82,17 +83,27 @@ class FriendProfileViewController: UIViewController, MFMessageComposeViewControl
         self.bacView.layer.borderWidth = 1.0
         self.bacView.layer.borderColor = UIColor.gray.cgColor
         
-        let numDrinks = friend?.count
-        let bac = BacInfo.drinkToBACDict[numDrinks!]
+        var numDrinks = 0
+        var drinkLimit = 0
+        if (friend?.name == "me") {
+            numDrinks = UserInfo.numDrinks
+            drinkLimit = UserInfo.drinkLimit
+        } else {
+            numDrinks = (friend?.count)!
+            drinkLimit = (friend?.limit)!
+        }
+        
+        let bac = BacInfo.drinkToBACDict[numDrinks]
         let colorHex = BacInfo.BACToColorDict[bac!]
         let effect = BacInfo.BACToEffectDict[bac!]
         
-        currentDrinkCountLabel.text = "\(numDrinks!)"
+        currentDrinkCountLabel.text = "\(numDrinks)"
         currentDrinkCountLabel.textColor = UIColor(hex: colorHex!)
         bacLabel.text = bac!
         bacLabel.textColor = UIColor(hex: colorHex!)
         effectLabel.text = effect!
         effectLabel.textColor = UIColor(hex: colorHex!)
+        limitLabel.text = "\(drinkLimit)"
     }
     
     
