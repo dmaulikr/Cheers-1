@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="esZ-gP-4Ic">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="esZ-gP-4Ic">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -203,7 +203,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
                                 <state key="normal" title="set bitmoji">
-                                    <color key="titleColor" red="0.55179251269035534" green="0.54889425837935468" blue="0.52588064917673105" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.49411764705882355" green="0.49411764705882355" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="setBitmoji:" destination="jzp-7B-bmv" eventType="touchUpInside" id="cgx-rs-IHI"/>
@@ -693,7 +693,7 @@
             </objects>
             <point key="canvasLocation" x="3031.1999999999998" y="133.5832083958021"/>
         </scene>
-        <!--Location View Controller-->
+        <!--group locations-->
         <scene sceneID="4yG-sT-6VJ">
             <objects>
                 <viewController id="KdD-MW-5Pe" customClass="LocationViewController" customModule="Cheers" customModuleProvider="target" sceneMemberID="viewController">
@@ -712,8 +712,8 @@
                         </subviews>
                         <color key="backgroundColor" red="0.83195324300266793" green="0.99934172862822279" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="zAe-mU-gVL">
-                        <barButtonItem key="leftBarButtonItem" image="dancing" id="Lcd-4o-7go">
+                    <navigationItem key="navigationItem" title="group locations" id="zAe-mU-gVL">
+                        <barButtonItem key="leftBarButtonItem" image="User Group Man Man-30" id="Lcd-4o-7go">
                             <connections>
                                 <action selector="goToGroupPage:" destination="KdD-MW-5Pe" id="JnV-bb-P3K"/>
                             </connections>
@@ -727,7 +727,7 @@
             </objects>
             <point key="canvasLocation" x="4405.6000000000004" y="133.5832083958021"/>
         </scene>
-        <!--Fluid View Controller-->
+        <!--drink tracker-->
         <scene sceneID="Bt5-ct-Yb7">
             <objects>
                 <viewController id="ZKQ-4G-FoJ" customClass="FluidViewController" customModule="Cheers" customModuleProvider="target" sceneMemberID="viewController">
@@ -772,8 +772,8 @@
                             <outletCollection property="gestureRecognizers" destination="9EI-GH-Q6G" appends="YES" id="mtU-dn-fKp"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="pve-io-isa">
-                        <barButtonItem key="rightBarButtonItem" image="dancing" id="8R1-ED-c35">
+                    <navigationItem key="navigationItem" title="drink tracker" id="pve-io-isa">
+                        <barButtonItem key="rightBarButtonItem" image="User Group Man Man-30" id="8R1-ED-c35">
                             <connections>
                                 <action selector="goToGroupPage:" destination="ZKQ-4G-FoJ" id="7xx-aO-ymF"/>
                             </connections>
@@ -807,7 +807,7 @@
             <objects>
                 <navigationController storyboardIdentifier="middle" automaticallyAdjustsScrollViewInsets="NO" id="sCI-NC-dvQ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="o0t-oH-jXs">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="o0t-oH-jXs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -825,7 +825,7 @@
             <objects>
                 <navigationController storyboardIdentifier="left" automaticallyAdjustsScrollViewInsets="NO" id="C9o-q2-fFP" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="7yk-ed-tcl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7yk-ed-tcl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -843,7 +843,7 @@
             <objects>
                 <navigationController storyboardIdentifier="right" automaticallyAdjustsScrollViewInsets="NO" id="BtV-Xl-Pzl" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="A2x-YH-Pfp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="A2x-YH-Pfp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -861,7 +861,7 @@
             <objects>
                 <navigationController storyboardIdentifier="top" automaticallyAdjustsScrollViewInsets="NO" id="CyX-UH-uTj" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Xjq-Hc-TwU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xjq-Hc-TwU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -878,9 +878,9 @@
     <resources>
         <image name="Delete Filled-30" width="25" height="25"/>
         <image name="Drag List Down-30" width="24" height="24"/>
+        <image name="User Group Man Man-30" width="25" height="25"/>
         <image name="bounce-icon-with-text" width="85" height="93"/>
         <image name="carousel-bitmoji-beer" width="320" height="343"/>
-        <image name="dancing" width="25" height="25"/>
         <image name="drink" width="25" height="25"/>
         <image name="emily1" width="78" height="120"/>
         <image name="emily2" width="98" height="105"/>

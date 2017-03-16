@@ -22,6 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //navigationBarAppearace.barTintColor = UIColor(hex: "b3ed89")
         navigationBarAppearace.barTintColor = UIColor.white
         
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSFontAttributeName: UIFont(name: "Lato-Light", size: 20)!
+        ]
+        
         // Customize dialog appearance
         let pv = PopupDialogDefaultView.appearance()
         pv.titleFont    = UIFont(name: "Lato-Light", size: 20)!
