@@ -397,7 +397,7 @@
                                         <color key="textColor" red="0.60392156860000001" green="0.81960784310000001" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="current BAC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ity-LM-Vlh">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current BAC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ity-LM-Vlh">
                                         <rect key="frame" x="67" y="16" width="177" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="20"/>
@@ -422,8 +422,8 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lm8-Vd-FVc">
-                                <rect key="frame" x="128" y="439" width="40" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="45" translatesAutoresizingMaskIntoConstraints="NO" id="Lm8-Vd-FVc">
+                                <rect key="frame" x="121" y="439" width="47" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="50"/>
                                 <color key="textColor" red="0.60392156860000001" green="0.81960784310000001" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -437,14 +437,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="drinks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnO-p9-zgc">
-                                <rect key="frame" x="128" y="499" width="119" height="21"/>
+                                <rect key="frame" x="121" y="499" width="133" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubq-5Y-eRF">
-                                <rect key="frame" x="207" y="439" width="40" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="45" translatesAutoresizingMaskIntoConstraints="NO" id="Ubq-5Y-eRF">
+                                <rect key="frame" x="207" y="439" width="47" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="50"/>
                                 <nil key="textColor"/>
@@ -465,9 +465,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="bacLabel" destination="wEd-C3-qiy" id="4QY-9U-UnE"/>
                         <outlet property="bacView" destination="M8p-9t-mis" id="1kp-AV-WJQ"/>
                         <outlet property="callButton" destination="kXi-rB-kq6" id="Xes-y0-Dlg"/>
+                        <outlet property="currentDrinkCountLabel" destination="Lm8-Vd-FVc" id="Uz1-MH-jh0"/>
                         <outlet property="dismissButton" destination="yhQ-5N-Lsi" id="OR0-M8-ZCV"/>
+                        <outlet property="effectLabel" destination="Wg9-py-ftl" id="Y5g-dy-64c"/>
                         <outlet property="nameLabel" destination="zon-Hg-oEc" id="C7g-7T-PBA"/>
                         <outlet property="profileImage" destination="JAL-5i-JlW" id="Xb5-hA-NGo"/>
                         <outlet property="textButton" destination="X0D-oX-LRY" id="UvJ-ad-2ML"/>
@@ -506,13 +509,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emily1" translatesAutoresizingMaskIntoConstraints="NO" id="h3g-Ho-IwB">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient-green" translatesAutoresizingMaskIntoConstraints="NO" id="jAh-vG-U0S">
                                                     <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="emily" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Lw-Bv-H1h">
-                                                    <rect key="frame" x="0.0" y="17" width="160" height="22"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emily1" translatesAutoresizingMaskIntoConstraints="NO" id="h3g-Ho-IwB">
+                                                    <rect key="frame" x="0.0" y="47" width="160" height="113"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="catherine" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Lw-Bv-H1h">
+                                                    <rect key="frame" x="0.0" y="14" width="160" height="22"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="22" id="f1e-XG-Zje"/>
+                                                        <constraint firstAttribute="height" constant="22" id="AKI-sz-gb9"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="20"/>
                                                     <nil key="textColor"/>
@@ -521,18 +527,23 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="h3g-Ho-IwB" secondAttribute="trailing" id="9H9-a9-cQZ"/>
-                                            <constraint firstItem="4Lw-Bv-H1h" firstAttribute="top" secondItem="3UY-Xs-rzK" secondAttribute="topMargin" constant="9" id="G6M-28-Cxo"/>
-                                            <constraint firstItem="h3g-Ho-IwB" firstAttribute="leading" secondItem="3UY-Xs-rzK" secondAttribute="leading" id="PUb-9x-QNs"/>
-                                            <constraint firstItem="h3g-Ho-IwB" firstAttribute="top" secondItem="3UY-Xs-rzK" secondAttribute="top" id="cxa-NQ-5pF"/>
-                                            <constraint firstItem="4Lw-Bv-H1h" firstAttribute="leading" secondItem="h3g-Ho-IwB" secondAttribute="leading" id="e98-FM-Zwl"/>
-                                            <constraint firstItem="4Lw-Bv-H1h" firstAttribute="trailing" secondItem="h3g-Ho-IwB" secondAttribute="trailing" id="npV-xs-kHJ"/>
-                                            <constraint firstAttribute="bottom" secondItem="h3g-Ho-IwB" secondAttribute="bottom" id="wiV-dX-SiZ"/>
+                                            <constraint firstItem="h3g-Ho-IwB" firstAttribute="leading" secondItem="3UY-Xs-rzK" secondAttribute="leading" id="2h9-M9-uP4"/>
+                                            <constraint firstAttribute="bottom" secondItem="h3g-Ho-IwB" secondAttribute="bottom" id="Eu6-iZ-W4n"/>
+                                            <constraint firstAttribute="trailing" secondItem="h3g-Ho-IwB" secondAttribute="trailing" id="GE3-Ka-8kL"/>
+                                            <constraint firstItem="h3g-Ho-IwB" firstAttribute="top" secondItem="4Lw-Bv-H1h" secondAttribute="bottom" constant="11" id="LOA-R6-148"/>
+                                            <constraint firstItem="h3g-Ho-IwB" firstAttribute="leading" secondItem="4Lw-Bv-H1h" secondAttribute="leading" id="LUh-Cj-06a"/>
+                                            <constraint firstItem="4Lw-Bv-H1h" firstAttribute="top" secondItem="3UY-Xs-rzK" secondAttribute="topMargin" constant="6" id="NR4-1E-2VS"/>
+                                            <constraint firstItem="4Lw-Bv-H1h" firstAttribute="leading" secondItem="jAh-vG-U0S" secondAttribute="leading" id="Qnn-xF-w3J"/>
+                                            <constraint firstItem="jAh-vG-U0S" firstAttribute="top" secondItem="3UY-Xs-rzK" secondAttribute="top" id="TKE-Cg-N7C"/>
+                                            <constraint firstItem="h3g-Ho-IwB" firstAttribute="trailing" secondItem="4Lw-Bv-H1h" secondAttribute="trailing" id="o6T-mo-FUL"/>
+                                            <constraint firstItem="4Lw-Bv-H1h" firstAttribute="trailing" secondItem="jAh-vG-U0S" secondAttribute="trailing" id="pgp-FM-Yyh"/>
+                                            <constraint firstItem="h3g-Ho-IwB" firstAttribute="bottom" secondItem="jAh-vG-U0S" secondAttribute="bottom" id="q0l-ex-1ef"/>
                                         </constraints>
                                         <size key="customSize" width="160" height="160"/>
                                         <connections>
                                             <outlet property="friendImage" destination="h3g-Ho-IwB" id="0DA-79-4Rq"/>
                                             <outlet property="friendName" destination="4Lw-Bv-H1h" id="H2o-WI-F7Q"/>
+                                            <outlet property="gradientView" destination="jAh-vG-U0S" id="iY4-uG-oHR"/>
                                             <segue destination="xlJ-nK-Bjs" kind="presentation" identifier="Show Friend" id="BuK-Ke-VS3"/>
                                         </connections>
                                     </collectionViewCell>
@@ -745,7 +756,7 @@
             <objects>
                 <navigationController storyboardIdentifier="middle" automaticallyAdjustsScrollViewInsets="NO" id="sCI-NC-dvQ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="o0t-oH-jXs">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="o0t-oH-jXs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -763,7 +774,7 @@
             <objects>
                 <navigationController storyboardIdentifier="left" automaticallyAdjustsScrollViewInsets="NO" id="C9o-q2-fFP" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7yk-ed-tcl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="7yk-ed-tcl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -781,7 +792,7 @@
             <objects>
                 <navigationController storyboardIdentifier="right" automaticallyAdjustsScrollViewInsets="NO" id="BtV-Xl-Pzl" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="A2x-YH-Pfp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="A2x-YH-Pfp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -799,7 +810,7 @@
             <objects>
                 <navigationController storyboardIdentifier="top" automaticallyAdjustsScrollViewInsets="NO" id="CyX-UH-uTj" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xjq-Hc-TwU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Xjq-Hc-TwU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -820,6 +831,7 @@
         <image name="drink" width="25" height="25"/>
         <image name="emily1" width="78" height="120"/>
         <image name="emily2" width="98" height="105"/>
+        <image name="gradient-green" width="188" height="185"/>
         <image name="minna-bitmoji" width="113" height="181"/>
         <image name="pin" width="25" height="25"/>
         <image name="redrect" width="750" height="370"/>

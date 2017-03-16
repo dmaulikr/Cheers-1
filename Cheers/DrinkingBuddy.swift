@@ -19,9 +19,11 @@ class DrinkingBuddy: NSObject, MKAnnotation {
     var status: Status
     var phone: String
     var image: String
+    var count: Int
+    var limit: Int
     // maybe location? address?
     
-    init(name: String, status: Status, title: String?, subtitle: String?, coordinate: CLLocationCoordinate2D, phone: String, image: String) {
+    init(name: String, status: Status, title: String?, subtitle: String?, coordinate: CLLocationCoordinate2D, phone: String, image: String, count: Int, limit: Int) {
         self.name = name
         self.status = status
         self.title = title ?? name
@@ -29,6 +31,8 @@ class DrinkingBuddy: NSObject, MKAnnotation {
         self.coordinate = coordinate
         self.phone = phone
         self.image = image
+        self.count = count
+        self.limit = limit
     }
     
     // Person's night status

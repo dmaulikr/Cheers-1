@@ -26,7 +26,16 @@ class FriendProfileViewController: UIViewController, MFMessageComposeViewControl
     @IBOutlet weak var profileImage: UIImageView!
     
     @IBOutlet weak var bacView: UIView!
+    
+    
+    @IBOutlet weak var bacLabel: UILabel!
 
+    @IBOutlet weak var effectLabel: UILabel!
+    
+    @IBOutlet weak var currentDrinkCountLabel: UILabel!
+    
+    
+    
     
     @IBAction func dismissProfile(_ sender: UIButton) {
         
@@ -72,6 +81,18 @@ class FriendProfileViewController: UIViewController, MFMessageComposeViewControl
         self.bacView.clipsToBounds = true
         self.bacView.layer.borderWidth = 1.0
         self.bacView.layer.borderColor = UIColor.gray.cgColor
+        
+        let numDrinks = friend?.count
+        let bac = BacInfo.drinkToBACDict[numDrinks!]
+        let colorHex = BacInfo.BACToColorDict[bac!]
+        let effect = BacInfo.BACToEffectDict[bac!]
+        
+        currentDrinkCountLabel.text = "\(numDrinks!)"
+        currentDrinkCountLabel.textColor = UIColor(hex: colorHex!)
+        bacLabel.text = bac!
+        bacLabel.textColor = UIColor(hex: colorHex!)
+        effectLabel.text = effect!
+        effectLabel.textColor = UIColor(hex: colorHex!)
     }
     
     

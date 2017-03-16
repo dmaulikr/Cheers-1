@@ -14,6 +14,9 @@ class FriendCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var friendImage: UIImageView!
     
+    @IBOutlet weak var gradientView: UIImageView!
+    
+    
     var name: String? {
         didSet {
             friendName?.text = name
@@ -23,6 +26,15 @@ class FriendCollectionViewCell: UICollectionViewCell {
     var friend: DrinkingBuddy? {
         didSet {
             friendImage.image = UIImage(named: (friend?.image)!)
+            
+            if (friend?.status == DrinkingBuddy.Status.left) {
+                self.gradientView.isHidden = true
+            } else {
+                let bac = BacInfo.drinkToBACDict[(friend?.count)!]
+                let colorHex = BacInfo.BACToColorDict[bac!]
+                let gradientString = BacInfo.ColorToGradientDict[colorHex!]
+                self.gradientView.image = UIImage(named: gradientString!)
+            }
         }
     }
 }

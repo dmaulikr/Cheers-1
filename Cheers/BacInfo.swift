@@ -50,4 +50,11 @@ struct BacInfo {
     "0.3":"BLACKOUT",
     "0.33":"UNCONSCIOUS"
     ]
+    
+    static var ColorToGradientDict: Dictionary<String, String> = [
+        "9AD145": "gradient-green",
+        "E7B90B": "gradient-yellow",
+        "FF871D": "gradient-orange",
+        "CC0F0F": "gradient-red"
+    ]
 }

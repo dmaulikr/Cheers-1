@@ -49,7 +49,7 @@ class LocationViewController: UIViewController {
     
     func addAnnotations() {
         let coord = CLLocationCoordinate2D(latitude: 37.445158, longitude: -122.163913)
-        let emily = DrinkingBuddy(name: "Emily", status: DrinkingBuddy.Status.dangerZone, title: nil, subtitle: "The Patio", coordinate: coord, phone: "4085945805", image: "em-bitmoji-shadow")
+        let emily = DrinkingBuddy(name: "me", status: DrinkingBuddy.Status.dangerZone, title: nil, subtitle: "The Patio", coordinate: coord, phone: "4085945805", image: "em-bitmoji-shadow", count: UserInfo.numDrinks, limit: UserInfo.drinkLimit)
         
         mapView?.delegate = self
         mapView?.addAnnotations([emily])
