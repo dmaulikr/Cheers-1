@@ -30,7 +30,7 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
     
     @IBOutlet weak var exceedLabel: UILabel!
     
-    
+
     
     // MARK: - Properties
     var fluidView: BAFluidView?
@@ -45,6 +45,8 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
     var numDrinks = 0
     var percentIncrement: Double = 0.0
 
+    var tutorialCompleted = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -105,7 +107,7 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
             
             animateDrinkCountChange()
             
-            if (numDrinks <= UserInfo.drinkLimit) {
+            if (numDrinks < UserInfo.drinkLimit) {
                 exceedLabel.isHidden = true
                 drinkLabel.textColor = UIColor(hex: "4E4E4E")
                 drinksInLabel.textColor = UIColor(hex: "4E4E4E")
