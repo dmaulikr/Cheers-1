@@ -760,6 +760,10 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hand" translatesAutoresizingMaskIntoConstraints="NO" id="Ubp-X9-kD2">
+                                <rect key="frame" x="155" y="398" width="99" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.98473873331311457" green="0.98964114717151597" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -779,6 +783,7 @@
                         <outlet property="drinkLabel" destination="z0U-4k-xMg" id="VUR-bY-uQi"/>
                         <outlet property="drinksInLabel" destination="egA-2p-Cvc" id="WxG-Go-kHL"/>
                         <outlet property="exceedLabel" destination="Bjt-Vg-BET" id="rci-aP-ZAA"/>
+                        <outlet property="handIcon" destination="Ubp-X9-kD2" id="DBm-tW-xdA"/>
                         <outlet property="swipeDownGesture" destination="9EI-GH-Q6G" id="gWe-sv-Z0o"/>
                         <outlet property="swipeUpGesture" destination="3BS-ZJ-rpo" id="glv-Qp-03W"/>
                     </connections>
@@ -820,7 +825,7 @@
             <objects>
                 <navigationController storyboardIdentifier="left" automaticallyAdjustsScrollViewInsets="NO" id="C9o-q2-fFP" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7yk-ed-tcl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="7yk-ed-tcl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -880,6 +885,7 @@
         <image name="emily1" width="78" height="120"/>
         <image name="emily2" width="98" height="105"/>
         <image name="gradient-green" width="188" height="185"/>
+        <image name="hand" width="103" height="81"/>
         <image name="minna-bitmoji" width="113" height="181"/>
         <image name="nav-my-profile-icon" width="45" height="47"/>
         <image name="pin" width="25" height="25"/>

@@ -18,8 +18,8 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
     @IBOutlet var swipeDownGesture: UISwipeGestureRecognizer!
     
     @IBOutlet weak var drinkLabel: UILabel!
-    
     @IBOutlet weak var drinksInLabel: UILabel!
+    @IBOutlet weak var handIcon: UIImageView!
     
     @IBAction func goToGroupPage(_ sender: Any) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -64,10 +64,14 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
         drinkLabel.textColor = UIColor(hex: "4E4E4E")
         drinksInLabel.textColor = UIColor(hex: "4E4E4E")
         exceedLabel.isHidden = true
+        handIcon.isHidden = true
     }
     
     @IBAction func swipeToAddDrink(_ sender: UISwipeGestureRecognizer) {
         if drinkSelected {
+            tutorialCompleted = true
+            handIcon.isHidden = true
+                
             level += percentIncrement
             fluidView?.fill(to: level as NSNumber!)
             fluidView?.fillColor = cupButton.selectedButton.itemColor
@@ -140,6 +144,9 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
     
     public func pathButton(_ dcPathButton: DCPathButton!, clickItemButtonAt itemButtonIndex: UInt) {
         drinkSelected = true
+        if (tutorialCompleted == false) {
+            handIcon.isHidden = false
+        }
         fluidView?.fillColor = cupButton.selectedButton.itemColor
     }
     
