@@ -75,7 +75,7 @@ class FriendProfileViewController: UIViewController, MFMessageComposeViewControl
         bouncedLabel.isHidden = true
         if (friend?.status == DrinkingBuddy.Status.left) {
             bouncedLabel.isHidden = false
-            currBacLabel.text = "Previous BAC"
+            currBacLabel.text = "previous BAC"
         }
     }
     

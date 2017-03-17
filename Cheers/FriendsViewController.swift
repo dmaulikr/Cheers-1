@@ -62,8 +62,8 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     
     @IBAction func bounce(_ sender: UIButton) {
-        let title = "Going home now?"
-        let message = "We'll notify your group"
+        let title = "going home now?"
+        let message = "we'll notify your group! tap anywhere outside this box to cancel."
         let popup = PopupDialog(title: title, message: message, image: nil)
         
         let button = DefaultButton(title: "BOUNCE") {
