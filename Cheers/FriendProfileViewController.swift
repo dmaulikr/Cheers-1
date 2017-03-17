@@ -8,6 +8,7 @@
 
 import UIKit
 import MessageUI
+import MapKit
 
 class FriendProfileViewController: UIViewController, MFMessageComposeViewControllerDelegate {
     
@@ -47,35 +48,21 @@ class FriendProfileViewController: UIViewController, MFMessageComposeViewControl
     }
     
     @IBAction func messageFriend(_ sender: UIButton) {
-        if MFMessageComposeViewController.canSendText(){
-            let msg:MFMessageComposeViewController=MFMessageComposeViewController()
-            let number = [friend!.phone]
-            msg.recipients = number
-            msg.body="are you okay?"
-            msg.messageComposeDelegate = self
-            self.present(msg,animated:true,completion:nil)
-        }
-        else {
-            NSLog("your device do not support SMS....")
-        }
+        text()
     }
     
     @IBAction func callFriend(_ sender: UIButton) {
-        
-        let number = friend!.phone
-        //@available(iOS 10.0, *)
-        guard let no = URL(string: "telprompt://" + number) else { return }
-        
-        UIApplication.shared.open(no, options: [:], completionHandler: nil)
+        call()
     }
     
     
     @IBAction func locateFriend(_ sender: UIButton) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let snapContainer = appDelegate.window?.rootViewController as! SnapContainerViewController
-        let mapViewOffset = snapContainer.rightVc.view.frame.origin
-        snapContainer.scrollView.setContentOffset(mapViewOffset, animated: true)
-        self.dismiss(animated: true, completion: nil)
+        locate()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     override func viewDidLoad() {
@@ -91,6 +78,39 @@ class FriendProfileViewController: UIViewController, MFMessageComposeViewControl
             bouncedLabel.isHidden = false
             currBacLabel.text = "Previous BAC"
         }
+    }
+    
+    private func text() {
+        if MFMessageComposeViewController.canSendText(){
+            let msg:MFMessageComposeViewController=MFMessageComposeViewController()
+            let number = [friend!.phone]
+            msg.recipients = number
+            msg.body="are you okay?"
+            msg.messageComposeDelegate = self
+            self.present(msg,animated:true,completion:nil)
+        }
+        else {
+            NSLog("your device do not support SMS....")
+        }
+    }
+    
+    private func call() {
+        let number = friend!.phone
+        //@available(iOS 10.0, *)
+        guard let no = URL(string: "telprompt://" + number) else { return }
+        UIApplication.shared.open(no, options: [:], completionHandler: nil)
+    }
+    
+    private func locate() {
+        let coord2d = (friend?.coordinate)!
+        UserInfo.latitudeToView = Double(coord2d.latitude)
+        UserInfo.longitudeToView = Double(coord2d.longitude)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "toLocate"), object: nil)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let snapContainer = appDelegate.window?.rootViewController as! SnapContainerViewController
+        let mapViewOffset = snapContainer.rightVc.view.frame.origin
+        snapContainer.scrollView.setContentOffset(mapViewOffset, animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func populateFriend() {
@@ -143,6 +163,23 @@ class FriendProfileViewController: UIViewController, MFMessageComposeViewControl
             controller.dismiss(animated: false, completion: nil)
         }
     }
+    
+    override var previewActionItems: [UIPreviewActionItem] {
+        let action1 = UIPreviewAction(title: "Call", style: .default, handler: { [weak self] previewAction, viewController in
+            self?.call()
+        })
+        
+        let action2 = UIPreviewAction(title: "Text", style: .default, handler: { [weak self] previewAction, viewController in
+            self?.text()
+        })
+        
+        let action3 = UIPreviewAction(title: "Locate", style: .default, handler: { [weak self] previewAction, viewController in
+            self?.locate()
+        })
+        
+        return [action1, action2, action3]
+    }
+
 
     /*
     // MARK: - Navigation

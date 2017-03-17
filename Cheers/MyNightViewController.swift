@@ -69,7 +69,6 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         popup.addButtons([button])
         self.present(popup, animated: true, completion: nil)
-        
     }
 
     override func viewDidLoad() {

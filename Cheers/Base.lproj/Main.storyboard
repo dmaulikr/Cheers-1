@@ -19,9 +19,6 @@
         <array key="Lato-Light.ttf">
             <string>Lato-Light</string>
         </array>
-        <array key="Lato-LightItalic.ttf">
-            <string>Lato-LightItalic</string>
-        </array>
         <array key="Lato-Regular.ttf">
             <string>Lato-Regular</string>
         </array>
@@ -30,7 +27,7 @@
         <!--Personalize View Controller-->
         <scene sceneID="bFs-7n-ufJ">
             <objects>
-                <viewController id="esZ-gP-4Ic" customClass="PersonalizeViewController" customModule="Cheers" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="personalize" id="esZ-gP-4Ic" customClass="PersonalizeViewController" customModule="Cheers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="maU-ax-nmP"/>
                         <viewControllerLayoutGuide type="bottom" id="nlV-UJ-WCk"/>
@@ -78,7 +75,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nav-my-profile-icon" translatesAutoresizingMaskIntoConstraints="NO" id="tMh-eG-qpk">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="massive-my-profile-icon" translatesAutoresizingMaskIntoConstraints="NO" id="tMh-eG-qpk">
                                         <rect key="frame" x="26" y="26" width="59" height="55"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -127,31 +124,12 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="STAYING SOBER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0M-aq-4vz">
-                                <rect key="frame" x="50" y="514" width="275" height="43"/>
+                                <rect key="frame" x="50" y="481" width="275" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="30"/>
                                 <color key="textColor" red="0.60392156862745094" green="0.81960784313725488" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="legal driving limit: 0.08 BAC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uV-sk-nN4">
-                                <rect key="frame" x="67" y="464" width="241" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Lato-LightItalic" family="Lato" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptT-6X-mXe">
-                                <rect key="frame" x="107" y="600" width="161" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.79443607233502544" green="0.79443607233502544" blue="0.79443607233502544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
-                                <state key="normal" title="let's go out">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="goingOut:" destination="esZ-gP-4Ic" eventType="touchUpInside" id="XhP-nS-Y7V"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbx-Vp-DXv">
                                 <rect key="frame" x="0.0" y="89" width="375" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -161,19 +139,38 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crm-gw-lf6">
-                                <rect key="frame" x="111" y="421" width="74" height="31"/>
+                                <rect key="frame" x="114" y="429" width="74" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="30"/>
                                 <color key="textColor" red="0.60392156862745094" green="0.81960784313725488" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BAC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dio-nL-WRc">
-                                <rect key="frame" x="193" y="421" width="70" height="31"/>
+                                <rect key="frame" x="190" y="429" width="70" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Us-oQ-xOd">
+                                <rect key="frame" x="280" y="433" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="showBACInfo:" destination="esZ-gP-4Ic" eventType="touchUpInside" id="EOH-oC-aSf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptT-6X-mXe">
+                                <rect key="frame" x="107" y="590" width="161" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                <state key="normal" title="let's go out!">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="goingOut:" destination="esZ-gP-4Ic" eventType="touchUpInside" id="XhP-nS-Y7V"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -305,7 +302,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qa-Sj-NgJ">
                                 <rect key="frame" x="162" y="597" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Drag List Down-30"/>
+                                <state key="normal" image="User Group Man Man-30"/>
                                 <connections>
                                     <action selector="goDownToGroupPage:" destination="jzp-7B-bmv" eventType="touchUpInside" id="52t-xF-eEh"/>
                                 </connections>
@@ -331,7 +328,7 @@
         <!--Friend Profile View Controller-->
         <scene sceneID="3H7-Kb-qmk">
             <objects>
-                <viewController id="xlJ-nK-Bjs" customClass="FriendProfileViewController" customModule="Cheers" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="friendprofile" id="xlJ-nK-Bjs" customClass="FriendProfileViewController" customModule="Cheers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8aR-Kw-zYD"/>
                         <viewControllerLayoutGuide type="bottom" id="gSM-HO-fYt"/>
@@ -347,7 +344,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXi-rB-kq6">
                                         <rect key="frame" x="31" y="9" width="65" height="65"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="profile-call-icon"/>
+                                        <state key="normal" title="Button" image="massive-call-button"/>
                                         <connections>
                                             <action selector="callFriend:" destination="xlJ-nK-Bjs" eventType="touchUpInside" id="ptb-8N-ZmG"/>
                                         </connections>
@@ -356,20 +353,20 @@
                                         <rect key="frame" x="31" y="72" width="65" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="18"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.69803921568627447" green="0.42352941176470588" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOQ-aF-ig2">
-                                        <rect key="frame" x="123" y="73" width="65" height="21"/>
+                                        <rect key="frame" x="123" y="73" width="65" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="18"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.69803921568627447" green="0.42352941176470588" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0D-oX-LRY">
                                         <rect key="frame" x="123" y="9" width="65" height="65"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="profile-text-icon"/>
+                                        <state key="normal" title="Button" image="massive-text-button"/>
                                         <connections>
                                             <action selector="messageFriend:" destination="xlJ-nK-Bjs" eventType="touchUpInside" id="4xB-EY-ha1"/>
                                         </connections>
@@ -378,13 +375,15 @@
                                         <rect key="frame" x="214" y="73" width="65" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="18"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.69803921568627447" green="0.42352941176470588" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6I-GF-Z7x">
                                         <rect key="frame" x="214" y="9" width="65" height="65"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="profile-locate-icon"/>
+                                        <state key="normal" image="massive-locate-button">
+                                            <color key="titleColor" red="0.3388610496824383" green="0.15728973153553752" blue="0.41993855441922967" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="locateFriend:" destination="xlJ-nK-Bjs" eventType="touchUpInside" id="xNG-gH-ibq"/>
                                         </connections>
@@ -616,6 +615,7 @@
                                             <outlet property="exceededLabel" destination="Hwa-4I-aYA" id="0UH-pN-VRy"/>
                                             <outlet property="friendImage" destination="hFU-pt-HCE" id="ldM-7G-aRJ"/>
                                             <outlet property="friendName" destination="enF-za-o8g" id="zAw-AA-MjR"/>
+                                            <segue destination="xlJ-nK-Bjs" kind="presentation" identifier="Show Drunk Friend" id="6TS-gc-o3t"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GroupNameCell" id="nPH-eU-38z" customClass="DrunkFriendCollectionViewCell" customModule="Cheers" customModuleProvider="target">
@@ -648,9 +648,9 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxz-Uj-83V">
-                                <rect key="frame" x="94" y="569" width="68" height="70"/>
+                                <rect key="frame" x="97" y="567" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="text-group-icon-with-text">
+                                <state key="normal" image="text-group-icon">
                                     <color key="titleShadowColor" red="1" green="0.53327105793142793" blue="0.50883088588606284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -658,9 +658,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRy-U2-hIh">
-                                <rect key="frame" x="213" y="569" width="68" height="70"/>
+                                <rect key="frame" x="212" y="567" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="bounce-icon-with-text"/>
+                                <state key="normal" image="bounce-icon"/>
                                 <connections>
                                     <action selector="bounce:" destination="mx0-iY-FJv" eventType="touchUpInside" id="7YM-f9-F0p"/>
                                 </connections>
@@ -675,13 +675,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MtD-aF-Ibv">
-                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" image="drink" id="rIl-FK-78b">
                             <connections>
                                 <action selector="goToManualTracker:" destination="mx0-iY-FJv" id="Xmw-wx-x9Q"/>
                             </connections>
                         </barButtonItem>
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="AMf-hO-bWG">
+                        <button key="titleView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="AMf-hO-bWG">
                             <rect key="frame" x="163" y="-3" width="50" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="nav-my-profile-icon"/>
@@ -699,6 +698,7 @@
                         <outlet property="bounceButton" destination="yRy-U2-hIh" id="Wjj-Ju-pAg"/>
                         <outlet property="chatButton" destination="fxz-Uj-83V" id="h9H-09-BZk"/>
                         <outlet property="collectionView" destination="05x-K5-en1" id="d7Y-Km-WEx"/>
+                        <segue destination="esZ-gP-4Ic" kind="presentation" identifier="Reset" id="G8V-Je-zGB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0hu-Sx-ak3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -737,7 +737,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZfW-tq-Ru8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4405.6000000000004" y="133.5832083958021"/>
+            <point key="canvasLocation" x="4678" y="135"/>
         </scene>
         <!--drink tracker-->
         <scene sceneID="Bt5-ct-Yb7">
@@ -866,7 +866,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vyu-jO-kVp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3732" y="134.48275862068968"/>
+            <point key="canvasLocation" x="4007" y="135"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7cY-uE-IMq">
@@ -889,22 +889,25 @@
     </scenes>
     <resources>
         <image name="Delete Filled-30" width="25" height="25"/>
-        <image name="Drag List Down-30" width="24" height="24"/>
         <image name="User Group Man Man-30" width="25" height="25"/>
-        <image name="bounce-icon-with-text" width="85" height="93"/>
+        <image name="bounce-icon" width="85" height="85"/>
         <image name="carousel-bitmoji-beer" width="320" height="343"/>
         <image name="drink" width="25" height="25"/>
         <image name="emily1" width="78" height="120"/>
         <image name="emily2" width="98" height="105"/>
         <image name="gradient-green" width="188" height="185"/>
         <image name="hand" width="103" height="81"/>
+        <image name="massive-call-button" width="302" height="302"/>
+        <image name="massive-locate-button" width="302" height="302"/>
+        <image name="massive-my-profile-icon" width="294" height="307"/>
+        <image name="massive-text-button" width="302" height="302"/>
         <image name="minna-bitmoji" width="113" height="181"/>
         <image name="nav-my-profile-icon" width="45" height="47"/>
         <image name="pin" width="25" height="25"/>
-        <image name="profile-call-icon" width="67" height="67"/>
-        <image name="profile-locate-icon" width="67" height="67"/>
-        <image name="profile-text-icon" width="67" height="67"/>
         <image name="redrect" width="750" height="370"/>
-        <image name="text-group-icon-with-text" width="86" height="94"/>
+        <image name="text-group-icon" width="85" height="85"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="BuK-Ke-VS3"/>
+    </inferredMetricsTieBreakers>
 </document>

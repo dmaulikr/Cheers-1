@@ -23,11 +23,11 @@ class LocationViewController: UIViewController {
     // Properties
     let locationManager = CLLocationManager()
     let regionRadius: CLLocationDistance = 500
-    let initialLocation = CLLocation(latitude: 37.789819, longitude: -122.420716)
+    
+    var initialLocation: CLLocation = CLLocation(latitude: 37.789819, longitude: -122.420716)
     
     let friends = DrinkingBuddy.getFriends()
     
-    //let noLocation = CLLocationCoordinate2D()
     var viewRegion: MKCoordinateRegion?
     
     override func viewDidLoad() {
@@ -36,7 +36,7 @@ class LocationViewController: UIViewController {
         centerMapOnLocation(location: initialLocation)
         addAnnotations()
 
-        // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(self.centerMapAgain(notification:)), name: Notification.Name(rawValue: "toLocate"), object: nil)
     }
     
     func requestLocationAccess() {
@@ -56,6 +56,14 @@ class LocationViewController: UIViewController {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius, regionRadius)
         self.viewRegion = coordinateRegion
         mapView.setRegion(coordinateRegion, animated: true)
+    }
+    
+    func centerMapAgain(notification: Notification) {
+        let lat = UserInfo.latitudeToView
+        let long = UserInfo.longitudeToView
+        let coord = CLLocation(latitude: lat, longitude: long)
+        let oc_coord = CLLocation(latitude: 37.430986, longitude: -122.190008)
+        centerMapOnLocation(location: coord)
     }
     
     func addAnnotations() {
@@ -86,14 +94,9 @@ extension LocationViewController: MKMapViewDelegate {
             
             // will need to fix this
             let name = (annotation.title!)!
-            var pinImage: UIImage?
-            if (name == "shubha" || name == "nick" || name == "raven") {
-                pinImage = UIImage(named: "me-pin")
-            } else {
-                let pinName = name + "-pin"
-                pinImage = UIImage(named: pinName)
+            let pinName = name + "-pin"
+            let pinImage = UIImage(named: pinName)
 
-            }
             annotationView.image = pinImage
             return annotationView
         }

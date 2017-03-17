@@ -11,7 +11,7 @@ import MapKit
 import Foundation
 import MessageUI
 
-class FriendsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, MFMessageComposeViewControllerDelegate {
+class FriendsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, MFMessageComposeViewControllerDelegate, UIViewControllerPreviewingDelegate {
     
     // model
     var partyPeople: [DrinkingBuddy] = []
@@ -52,7 +52,7 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
                 numbers.append(buddy.phone)
             }
             msg.recipients = numbers
-            msg.body="hello"
+            msg.body="Hi everyone!"
             msg.messageComposeDelegate = self
             self.present(msg,animated:true,completion:nil)
         }
@@ -67,7 +67,8 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
         let popup = PopupDialog(title: title, message: message, image: nil)
         
         let button = DefaultButton(title: "BOUNCE") {
-            print("button pressed")
+            UserInfo.clearData()
+            self.performSegue(withIdentifier: "Reset", sender: self)
         }
         
         popup.addButtons([button])
@@ -97,11 +98,16 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
         automaticallyAdjustsScrollViewInsets = false
-        //createFriends()
         
         partyPeople = DrinkingBuddy.getFriends()
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateMyImage(notification:)), name: Notification.Name(rawValue: "bitmojiProfileChange"), object: nil)
+        
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: view)
+        } else {
+            print("3D Touch Not Available")
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -211,6 +217,31 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
         return 1.0
     }
     
+    // MARK: - UIViewControllerPreviewingDelegate
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        
+        guard let indexPath = collectionView?.indexPathForItem(at: location) else { return nil }
+        
+        guard let cell = collectionView?.cellForItem(at: indexPath) else { return nil }
+        
+        guard let detailVC = storyboard?.instantiateViewController(withIdentifier: "friendprofile") as? FriendProfileViewController else { return nil }
+        
+        let friend = partyPeople[indexPath.item-1]
+        detailVC.friend = friend
+        
+        detailVC.preferredContentSize = CGSize(width: 0.0, height: 450)
+        
+        previewingContext.sourceRect = cell.frame
+        
+        return detailVC
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        
+        show(viewControllerToCommit, sender: self)
+        
+    }
     
     // MARK: UICollectionViewDelegate
     
@@ -254,6 +285,12 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
             case "Show Friend":
                 if let destinationvc = segue.destination as? FriendProfileViewController {
                     if let friendCell = sender as? FriendCollectionViewCell {
+                        destinationvc.friend = friendCell.friend
+                    }
+                }
+            case "Show Drunk Friend":
+                if let destinationvc = segue.destination as? FriendProfileViewController {
+                    if let friendCell = sender as? DrunkFriendCollectionViewCell {
                         destinationvc.friend = friendCell.friend
                     }
                 }

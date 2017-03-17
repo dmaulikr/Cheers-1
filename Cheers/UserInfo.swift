@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 struct UserInfo {
     
@@ -31,11 +32,37 @@ struct UserInfo {
     
     static var myBitmoji: String {
         get {
-            return defaults.object(forKey: "MyBitmoji") as? String ?? "carousel-bitmoji-beer" //replace this with default
+            return defaults.object(forKey: "MyBitmoji") as? String ?? "carousel-bitmoji-beer"
         }
         set {
             defaults.set(newValue, forKey: "MyBitmoji")
         }
+    }
+    
+    static var latitudeToView: Double {
+        get {
+            return defaults.object(forKey: "LatitudeToLocate") as? Double ?? 37.789819
+        }
+        set {
+            defaults.set(newValue, forKey: "LatitudeToLocate")
+        }
+    }
+    
+    static var longitudeToView: Double {
+        get {
+            return defaults.object(forKey: "LongitudeToLocate") as? Double ?? -122.420716
+        }
+        set {
+            defaults.set(newValue, forKey: "LongitudeToLocate")
+        }
+    }
+    
+    static func clearData() {
+        numDrinks = 0
+        drinkLimit = 0
+        myBitmoji = "carousel-bitmoji-beer"
+        latitudeToView = 37.789819
+        longitudeToView = -122.420716
     }
     
     // MARK: Public API

@@ -35,9 +35,9 @@ class PersonalizeViewController: UIViewController {
         self.circularSlider.centeredView.layer.borderColor = UIColor.white.cgColor
         
         self.goOutButton.layer.cornerRadius = 5
+        self.goOutButton.isEnabled = false
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateLabels(notification:)), name: Notification.Name(rawValue: "drinkLimitChange"), object: nil)
-        
     }
     
     func updateLabels(notification: Notification) {
@@ -48,10 +48,29 @@ class PersonalizeViewController: UIViewController {
         self.bacLabel.textColor = UIColor(hex: colorHex!)
         self.effectLabel.text = BacInfo.BACToEffectDict[bac!]
         self.effectLabel.textColor = UIColor(hex: colorHex!)
+        
+        // also show the button
+        goOutButton.isEnabled = true
+        goOutButton.layer.backgroundColor = UIColor(hex: "B26CB5").cgColor
     }
     
     // MARK: - Properties
     var drinkLimit: Int = 0
+    
+    @IBAction func showBACInfo(_ sender: UIButton) {
+        let title = "WTF is BAC?"
+        let message = "BAC (Blood Alcohol Concentration) is the amount of alcohol in your blood. It is illegal to drive if your BAC is over 0.08"
+        
+        let popup = PopupDialog(title: title, message: message, image: nil)
+        
+        let button = DefaultButton(title: "OK") {
+            print("button pressed")
+        }
+        
+        popup.addButtons([button])
+        self.present(popup, animated: true, completion: nil)
+    }
+    
 
     @IBAction func goingOut(_ sender: UIButton) {
         saveDrinkLimit()
@@ -71,9 +90,13 @@ class PersonalizeViewController: UIViewController {
     }
     
     private func saveDrinkLimit() {
-        self.drinkLimit = Int(ceil(self.circularSlider.value))
+        self.drinkLimit = self.circularSlider.getValue()
         UserInfo.drinkLimit = self.drinkLimit
     }
+    
+
+   // @IBAction func unwindToPersonalize(segue: UIStoryboardSegue) {}
+    
     
     /*
     // MARK: - Navigation
