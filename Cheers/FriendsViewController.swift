@@ -238,9 +238,8 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-        
-        show(viewControllerToCommit, sender: self)
-        
+        self.navigationController?.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
+        present(viewControllerToCommit, animated: true, completion: nil)
     }
     
     // MARK: UICollectionViewDelegate

@@ -62,7 +62,6 @@ class LocationViewController: UIViewController {
         let lat = UserInfo.latitudeToView
         let long = UserInfo.longitudeToView
         let coord = CLLocation(latitude: lat, longitude: long)
-        let oc_coord = CLLocation(latitude: 37.430986, longitude: -122.190008)
         centerMapOnLocation(location: coord)
     }
     

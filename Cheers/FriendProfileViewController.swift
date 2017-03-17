@@ -60,9 +60,8 @@ class FriendProfileViewController: UIViewController, MFMessageComposeViewControl
         locate()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    func xButtonPressed(sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
