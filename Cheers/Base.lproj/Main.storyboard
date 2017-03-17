@@ -288,14 +288,6 @@
                                     <outlet property="delegate" destination="jzp-7B-bmv" id="hP8-cl-CjF"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qa-Sj-NgJ">
-                                <rect key="frame" x="162" y="597" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="User Group Man Man-30"/>
-                                <connections>
-                                    <action selector="goDownToGroupPage:" destination="jzp-7B-bmv" eventType="touchUpInside" id="52t-xF-eEh"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9w-bq-WgW">
                                 <rect key="frame" x="141" y="230" width="93" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -306,6 +298,14 @@
                                 </state>
                                 <connections>
                                     <action selector="setBitmoji:" destination="jzp-7B-bmv" eventType="touchUpInside" id="cgx-rs-IHI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qa-Sj-NgJ">
+                                <rect key="frame" x="172" y="617" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="massive-group-with-down"/>
+                                <connections>
+                                    <action selector="goDownToGroupPage:" destination="jzp-7B-bmv" eventType="touchUpInside" id="52t-xF-eEh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -599,6 +599,30 @@
                                                     <color key="textColor" red="0.80000000000000004" green="0.058823529411764705" blue="0.058823529411764705" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ds-cL-Ltq">
+                                                    <rect key="frame" x="171" y="84" width="45" height="45"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button" image="massive-red-call"/>
+                                                    <connections>
+                                                        <action selector="call:" destination="mx0-iY-FJv" eventType="touchUpInside" id="j3E-hB-LJP"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ape-X9-zLW">
+                                                    <rect key="frame" x="282" y="84" width="45" height="45"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button" image="massive-red-locate"/>
+                                                    <connections>
+                                                        <action selector="locate:" destination="mx0-iY-FJv" eventType="touchUpInside" id="mW6-AN-c4c"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnj-Vz-x0e">
+                                                    <rect key="frame" x="227" y="84" width="45" height="45"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button" image="massive-red-group-text"/>
+                                                    <connections>
+                                                        <action selector="text:" destination="mx0-iY-FJv" eventType="touchUpInside" id="95f-tP-MJv"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </view>
                                         <constraints>
@@ -651,7 +675,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxz-Uj-83V">
                                 <rect key="frame" x="97" y="567" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="text-group-icon">
+                                <state key="normal" image="massive-text-group">
                                     <color key="titleShadowColor" red="1" green="0.53327105793142793" blue="0.50883088588606284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -661,7 +685,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRy-U2-hIh">
                                 <rect key="frame" x="212" y="567" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="bounce-icon"/>
+                                <state key="normal" image="massive-bounce-tf-out"/>
                                 <connections>
                                     <action selector="bounce:" destination="mx0-iY-FJv" eventType="touchUpInside" id="7YM-f9-F0p"/>
                                 </connections>
@@ -676,7 +700,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MtD-aF-Ibv">
-                        <barButtonItem key="leftBarButtonItem" image="drink" id="rIl-FK-78b">
+                        <barButtonItem key="leftBarButtonItem" image="Cocktail-purple" id="rIl-FK-78b">
                             <connections>
                                 <action selector="goToManualTracker:" destination="mx0-iY-FJv" id="Xmw-wx-x9Q"/>
                             </connections>
@@ -689,7 +713,7 @@
                                 <action selector="gotToMyProfile:" destination="mx0-iY-FJv" eventType="touchUpInside" id="Z1n-wg-zZo"/>
                             </connections>
                         </button>
-                        <barButtonItem key="rightBarButtonItem" image="pin" id="9iJ-4K-80F">
+                        <barButtonItem key="rightBarButtonItem" image="Marker_30" id="9iJ-4K-80F">
                             <connections>
                                 <action selector="goToMap:" destination="mx0-iY-FJv" id="126-2v-Lb4"/>
                             </connections>
@@ -726,7 +750,7 @@
                         <color key="backgroundColor" red="0.83195324300266793" green="0.99934172862822279" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="group locations" id="zAe-mU-gVL">
-                        <barButtonItem key="leftBarButtonItem" image="User Group Man Man-30" id="Lcd-4o-7go">
+                        <barButtonItem key="leftBarButtonItem" image="User Group Man Man_30" id="Lcd-4o-7go">
                             <connections>
                                 <action selector="goToGroupPage:" destination="KdD-MW-5Pe" id="JnV-bb-P3K"/>
                             </connections>
@@ -786,7 +810,7 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="drink tracker" id="pve-io-isa">
-                        <barButtonItem key="rightBarButtonItem" image="User Group Man Man-30" id="8R1-ED-c35">
+                        <barButtonItem key="rightBarButtonItem" image="User Group Man Man_30" id="8R1-ED-c35">
                             <connections>
                                 <action selector="goToGroupPage:" destination="ZKQ-4G-FoJ" id="7xx-aO-ymF"/>
                             </connections>
@@ -889,24 +913,29 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Cocktail-purple" width="25" height="25"/>
         <image name="Delete Filled-30" width="25" height="25"/>
-        <image name="User Group Man Man-30" width="25" height="25"/>
-        <image name="bounce-icon" width="85" height="85"/>
+        <image name="Marker_30" width="25" height="25"/>
+        <image name="User Group Man Man_30" width="25" height="25"/>
         <image name="carousel-bitmoji-beer" width="320" height="343"/>
         <image name="drink" width="25" height="25"/>
         <image name="emily1" width="78" height="120"/>
         <image name="emily2" width="98" height="105"/>
         <image name="gradient-green" width="188" height="185"/>
         <image name="hand" width="103" height="81"/>
+        <image name="massive-bounce-tf-out" width="320" height="320"/>
         <image name="massive-call-button" width="302" height="302"/>
+        <image name="massive-group-with-down" width="200" height="219"/>
         <image name="massive-locate-button" width="302" height="302"/>
         <image name="massive-my-profile-icon" width="294" height="307"/>
+        <image name="massive-red-call" width="302" height="302"/>
+        <image name="massive-red-group-text" width="302" height="302"/>
+        <image name="massive-red-locate" width="302" height="302"/>
         <image name="massive-text-button" width="302" height="302"/>
+        <image name="massive-text-group" width="320" height="320"/>
         <image name="minna-bitmoji" width="113" height="181"/>
         <image name="nav-my-profile-icon" width="45" height="47"/>
-        <image name="pin" width="25" height="25"/>
         <image name="redrect" width="750" height="370"/>
-        <image name="text-group-icon" width="85" height="85"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="BuK-Ke-VS3"/>

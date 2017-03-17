@@ -76,6 +76,40 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     
     
+    @IBAction func call(_ sender: UIButton) {
+        let number = "4085945805"
+        guard let no = URL(string: "telprompt://" + number) else { return }
+        UIApplication.shared.open(no, options: [:], completionHandler: nil)
+    }
+    
+    
+    @IBAction func text(_ sender: UIButton) {
+        if MFMessageComposeViewController.canSendText(){
+            let msg:MFMessageComposeViewController=MFMessageComposeViewController()
+            let number = ["4085945805"]
+            msg.recipients = number
+            msg.body="Are you okay?"
+            msg.messageComposeDelegate = self
+            self.present(msg,animated:true,completion:nil)
+        }
+        else {
+            NSLog("your device do not support SMS....")
+        }
+    }
+    
+    @IBAction func locate(_ sender: UIButton) {
+        let minna_coord = CLLocationCoordinate2D(latitude: 37.789450, longitude: -122.420665)
+        UserInfo.latitudeToView = Double(minna_coord.latitude)
+        UserInfo.longitudeToView = Double(minna_coord.longitude)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "toLocate"), object: nil)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let snapContainer = appDelegate.window?.rootViewController as! SnapContainerViewController
+        let mapViewOffset = snapContainer.rightVc.view.frame.origin
+        snapContainer.scrollView.setContentOffset(mapViewOffset, animated: true)
+        //self.dismiss(animated: true, completion: nil)
+
+    }
+    
     // MARK: - MFMessageComposeViewControllerDelegate
     
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {

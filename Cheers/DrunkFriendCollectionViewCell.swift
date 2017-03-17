@@ -27,4 +27,6 @@ class DrunkFriendCollectionViewCell: UICollectionViewCell {
             friendImage.image = UIImage(named: (friend?.image)!)
         }
     }
+    
+    
 }

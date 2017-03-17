@@ -84,7 +84,7 @@ class FriendProfileViewController: UIViewController, MFMessageComposeViewControl
             let msg:MFMessageComposeViewController=MFMessageComposeViewController()
             let number = [friend!.phone]
             msg.recipients = number
-            msg.body="are you okay?"
+            msg.body="Hi!"
             msg.messageComposeDelegate = self
             self.present(msg,animated:true,completion:nil)
         }
