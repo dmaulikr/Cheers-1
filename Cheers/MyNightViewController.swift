@@ -98,8 +98,8 @@ class MyNightViewController: UIViewController, UICollectionViewDelegate, UIColle
         self.bacView.layer.borderWidth = 1.0
         self.bacView.layer.borderColor = UIColor.gray.cgColor
         
-        self.setBitmojiButton.layer.borderColor = UIColor.gray.cgColor
-        self.setBitmojiButton.layer.borderWidth = 1.0
+        //self.setBitmojiButton.layer.borderColor = UIColor.gray.cgColor
+        //self.setBitmojiButton.layer.borderWidth = 1.0
         self.setBitmojiButton.layer.cornerRadius = 10
     }
     

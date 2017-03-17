@@ -103,6 +103,8 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateMyImage(notification:)), name: Notification.Name(rawValue: "bitmojiProfileChange"), object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateMyGradient(notification:)), name: Notification.Name(rawValue: "drinkCountChange"), object: nil)
+        
         if traitCollection.forceTouchCapability == .available {
             registerForPreviewing(with: self, sourceView: view)
         } else {
@@ -118,9 +120,10 @@ class FriendsViewController: UIViewController, UICollectionViewDataSource, UICol
     
     func updateMyImage(notification: Notification) {
         partyPeople[2].image = UserInfo.myBitmoji
-        //let indexPath = IndexPath(item: 2, section: 0)
-        //collectionView.reloadItems(at: [indexPath])
-        //print(partyPeople[2].image)
+        self.collectionView.reloadData()
+    }
+    
+    func updateMyGradient(notification: Notification) {
         self.collectionView.reloadData()
     }
 

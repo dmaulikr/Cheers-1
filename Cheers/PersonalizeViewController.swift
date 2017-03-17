@@ -28,7 +28,9 @@ class PersonalizeViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        //setupDicts()
+        
+        // clear anything leftover in user defaults
+        UserInfo.clearData()
         
         self.circularSlider.textfield.isUserInteractionEnabled = false
         self.circularSlider.centeredView.layer.borderWidth = 0.0

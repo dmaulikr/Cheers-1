@@ -30,7 +30,11 @@ class FriendCollectionViewCell: UICollectionViewCell {
             if (friend?.status == DrinkingBuddy.Status.left) {
                 self.gradientView.isHidden = true
             } else {
-                let bac = BacInfo.drinkToBACDict[(friend?.count)!]
+                var drinkCount = (friend?.count)!
+                if (name == "me") {
+                    drinkCount = UserInfo.numDrinks
+                }
+                let bac = BacInfo.drinkToBACDict[drinkCount]
                 let colorHex = BacInfo.BACToColorDict[bac!]
                 let gradientString = BacInfo.ColorToGradientDict[colorHex!]
                 self.gradientView.image = UIImage(named: gradientString!)
