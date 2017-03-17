@@ -68,7 +68,8 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
     }
     
     @IBAction func swipeToAddDrink(_ sender: UISwipeGestureRecognizer) {
-        if drinkSelected {
+        // our dictionary only maps up to 10 drinks
+        if (drinkSelected && (numDrinks < 10)){
             tutorialCompleted = true
             handIcon.isHidden = true
                 
