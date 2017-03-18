@@ -69,21 +69,24 @@ class FluidViewController: UIViewController, DCPathButtonDelegate {
     
     @IBAction func swipeToAddDrink(_ sender: UISwipeGestureRecognizer) {
         // our dictionary only maps up to 10 drinks
-        if (drinkSelected && (numDrinks < 10)){
+        if (drinkSelected){
             tutorialCompleted = true
             handIcon.isHidden = true
-                
-            level += percentIncrement
-            fluidView?.fill(to: level as NSNumber!)
-            fluidView?.fillColor = cupButton.selectedButton.itemColor
-            numDrinks += 1
-            UserInfo.numDrinks = self.numDrinks
-            // kinda hacky but wtv
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "drinkCountChange"), object: nil)
             
-            drinksInLabel.text = (numDrinks == 1) ? "drink in" : "drinks in"
-        
-            animateDrinkCountChange()
+            if (numDrinks < 10) {
+                level += percentIncrement
+                fluidView?.fill(to: level as NSNumber!)
+                fluidView?.fillColor = cupButton.selectedButton.itemColor
+                numDrinks += 1
+                UserInfo.numDrinks = self.numDrinks
+                // kinda hacky but wtv
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "drinkCountChange"), object: nil)
+                
+                drinksInLabel.text = (numDrinks == 1) ? "drink in" : "drinks in"
+                
+                animateDrinkCountChange()
+
+            }
             if (UserInfo.drinkLimit == 0) {
                 limitReachedAlert(soberLimit: true)
                 drinkLabel.textColor = UIColor.white
